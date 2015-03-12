@@ -1,0 +1,46 @@
+/* ------------------
+ *   Data format 
+ * ------------------ */
+
+{
+   "Question1" : {
+   	"votes" : [1, 20, 9, 58]
+   },
+    "Question2" : {
+   	"votes" : [1, 20, 9]
+   },
+    "Question3" : {
+   	"votes" : [1, 1, 40]
+   },
+    "Question4" : {
+   	"votes" : [1, 22]
+   },
+    "Question5" : {
+   	"votes" : [8, 5, 99]
+   },
+   "Question6" : {
+   	"votes" : [13, 2, 3, 18]
+   },
+    "Question7" : {
+   	"votes" : [8, 21]
+   },
+    "Question8" : {
+   	"votes" : [11, 1]
+   },
+   "Question9" : {
+   	"votes" : [1, 20, 9, 58]
+   },
+   "Question10" : {
+   	"votes" : [58, 1]
+   },
+   "Question11" : {
+   	"votes" : [1, 67]
+   },
+   "Question12" : {
+   	"votes" : [2, 1]
+   },
+   "Question13" : {
+   	"votes" : [3, 5, 2, 1]
+   }
+}
+

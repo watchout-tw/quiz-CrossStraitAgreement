@@ -1,0 +1,41 @@
+
+.QAItem {
+	position: relative;
+	display: none;
+	border-top: 10px dashed #333333;
+	padding: 50px 0px 100px 0px;
+	margin: 0px 10px;
+
+} 
+@media screen and (min-width: 400px){
+	.QAItem {
+		width: 420px;
+		margin: 0 auto;
+	    position: relative;
+	    display: none;
+	    border-top: 10px dashed #333333;
+	    padding: 100px 0px;
+    } 
+}
+.QAItem.is-active {
+	display: block;
+}
+.QAItem-questionContent {
+	min-height: 50vh;
+	background: rgb(247,247,247);
+    padding: 20px 10px;
+    box-shadow: 10px 10px rgba(0,0,0,0.12);
+}
+
+
+.QAItem-questionTitle {
+	font-size: 20px;
+	font-weight: 800;
+	padding: 10px;
+	text-align: left;
+}
+.QAItem-questionDescription {
+	padding: 10px;
+	line-height: 2;
+	text-align: left;
+}

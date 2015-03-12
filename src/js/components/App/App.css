@@ -1,0 +1,12 @@
+.App {
+	width: 100%;
+	position: relative;
+	
+	
+}
+@media screen and (min-width: 960px){
+    .App {
+	   margin: 0 auto;
+	   text-align: center;
+    }
+}

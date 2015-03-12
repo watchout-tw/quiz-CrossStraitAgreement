@@ -1,0 +1,102 @@
+.Cover {
+	min-height: 80vh;
+	width: 100%;
+	background: rgb(220,220,220);
+	background: #F2DB5B;
+	text-align: center;
+	position: relative;
+	color: #333333;
+}
+.Cover-content {
+	padding: 10px; 
+	text-align: center;
+} 
+.Cover-title {
+	display: inline-block;
+	font-size: 20px;
+	width: 100%;
+	font-weight: 700;
+	margin-bottom: 20px;	
+}
+.Cover-titleMain {
+	padding: 4px 10px;
+    border-radius: 16px;
+    float: left;
+    font-size: 14px;
+    color: white;
+    display: inline-block;
+    background: #DB5948;
+    margin-bottom: 10px;
+    
+}
+.Cover-titleSub {
+	width: 100%;
+    font-size: 24px;
+    font-weight: 700;
+    overflow: hidden;
+    _overflow: visible;
+    zoom: 1;
+}
+.Cover-description {
+	text-align: left;
+	background: white;
+  	padding: 5px 30px;
+  	box-shadow: 60px 0px 0px #EFE9D7, -60px 0px 0px #EFE9D7, 0px -10px 0px #EFE9D7, 0px 10px 0px #EFE9D7
+}
+@media screen and (min-width: 600px){
+	.Cover-content {
+		width: 600px;
+		margin: 0 auto;
+    }
+    .Cover-title {
+    	margin-top: 5vh;
+    	display: inline-block;
+    	font-size: 26px;
+    	width: 100%;
+    	font-weight: 700;
+    	margin-bottom: 20px;	
+    }
+    .Cover-titleMain {
+    	font-size: 16px;
+        
+    }
+    .Cover-titleSub {
+    	font-size: 40px;
+    }
+    .Cover-description {
+    	text-align: left;
+    	background: white;
+      	padding: 5px 30px;
+      	box-shadow: 60px 0px 0px #EFE9D7, -60px 0px 0px #EFE9D7, 0px -10px 0px #EFE9D7, 0px 10px 0px #EFE9D7
+    }
+}
+.Cover-button {
+	/*
+	//border: 1px solid rgb(53,55,54);
+	vertical-align: bottom;
+    
+    padding: 10px 30px 10px 30px;
+	
+	cursor: pointer;
+
+	color: white;
+	background: rgb(53,55,54);
+	box-shadow: 6px 8px 0px 0px rgba(0,0,0,.16);	*/
+	
+	display: inline-block;
+	font-weight: 900;
+	margin: 20px 10px 50px 0px;
+	cursor: pointer;
+	font-size: 48px;
+	text-shadow: 2px 2px 0px white, -2px -2px white, -2px 2px white, 2px -2px white;
+
+	-ms-transform: rotate(-7deg); /* IE 9 */
+    -webkit-transform: rotate(-7deg); /* Chrome, Safari, Opera */
+    transform: rotate(-7deg);
+
+}
+.Cover-button:hover {
+	-ms-transform: rotate(7deg); /* IE 9 */
+    -webkit-transform: rotate(7deg); /* Chrome, Safari, Opera */
+    transform: rotate(7deg);
+}

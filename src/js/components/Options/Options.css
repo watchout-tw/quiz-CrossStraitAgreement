@@ -1,0 +1,31 @@
+.Options {
+	text-align: left;
+	margin: 0 auto;
+	width: 100%;
+}
+@media screen and (min-width: 400px){
+	.Options {
+	   text-align: left;
+	   margin: 0 auto;
+	   width: 400px;
+    }
+}
+.Options-item {
+	margin: 5px;
+	//border: 1px solid gray;
+	border: 1px solid rgb(180,180,180);
+
+	padding: 10px;
+	cursor: pointer;
+}
+.Options-item:hover {
+	//background: #F2DB5D;
+	//background: rgb(220,220,220);
+	box-shadow: -5px 0px 0px #F2DB5D, 5px 0px 0px #F2DB5D;
+	
+}
+.Options-item.is-choosed {
+	//background: #F2DB5D;
+	border: 1px solid #F2DB5D;
+	box-shadow: -5px 0px 0px #F2DB5D, 5px 0px 0px #F2DB5D;
+}
