@@ -3,6 +3,7 @@
 var React = require('react/addons');
 var Cover = require('../Cover/Cover.jsx');
 var QAItem = require('../QAItem/QAItem.jsx');
+
 var MatchResult = require('../MatchResult/MatchResult.jsx');
 
 var AppStore = require('../../stores/AppStore');
@@ -76,6 +77,7 @@ var App = React.createClass({
               this.state.match[value] += 1;
           }
       });
+
       //console.log(this.state.match);
   
       // TODO 紀錄總測驗人次
