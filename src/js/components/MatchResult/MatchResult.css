@@ -1,3 +1,7 @@
+.MatchResult-topMatch {
+	font-weight: 800;
+	font-size: 20px;
+}
 .MatchResult-item {
 	display: inline-block;
 	border: 1px solid white;
@@ -8,4 +12,5 @@
 .MatchResult-count {
 	padding-top: 14px;
     font-size: 30px;
+    font-weight: 800;
 }

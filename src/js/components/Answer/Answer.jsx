@@ -64,9 +64,9 @@ var Answer = React.createClass({
     
     var answerID = this.props.id + "Answer";///// SET answer/result part's id
 
-    //console.log(screen.width);
+    console.log(screen.width);
     var width = (screen.width > 400) ? 400 : screen.width-20;
-    var height = 200;//width/2;
+    var height = (screen.width > 400) ? 300 : 200;
 
     var chartItem = this.props.completed ? 
     <Chart width={width} 

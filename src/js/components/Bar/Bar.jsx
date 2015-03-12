@@ -6,8 +6,8 @@ var d3 = require("d3");
 var Bar = React.createClass({
   getDefaultProps: function() {
     return {
-      width: 0,
-      height: 0,
+      width: 400,
+      height: 300,
       offset: 0
     }
   },
@@ -25,13 +25,15 @@ var Bar = React.createClass({
       //   .attr('x', this.props.offset)
       //   .attr('y', this.props.availableHeight - this.props.height)
       //   .attr('dy', "0.35em")
-      //   .text("hello");
+      //   .text("hello");c
       
       // TODO: label animation
      
   },
 
   render: function() {
+    
+
     var label = this.props.value + " %";
     return (
       <g>
