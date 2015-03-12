@@ -36,6 +36,7 @@ canvas {
 	padding: 0px 5px 0px 5px;
 	margin: 0 auto;
     display: flex;
+    display: -webkit-flex; /* for safari */
 }
 @media screen and (min-width: 400px){
 	.Answer-flexGrid {
@@ -44,11 +45,13 @@ canvas {
     	padding: 0px 5px 0px 5px;
     	margin: 0 auto;
         display: flex;
+        display: -webkit-flex; /* for safari */
     }
 }
 
 .Answer-flexCell {
     flex: 1;
+    -webkit-flex: 1; /* for safari */
     text-align: center;
 }
 .Answer-version {
