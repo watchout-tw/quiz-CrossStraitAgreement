@@ -6,7 +6,7 @@ require('./Answer.css');
 
 var Chart = require('../Chart/Chart.jsx');
 var DataSeries = require('../DataSeries/DataSeries.jsx');
-
+var Version = require('../Version/Version.jsx');
 
 var Answer = React.createClass({
   
@@ -24,15 +24,15 @@ var Answer = React.createClass({
             </div>  
         )
     });
-
+    
+    var optionCounts = Object.keys(this.props.data).length;
     var versionItems = this.props.data.map((item,i)=>{
         
         var subItems = item.versions.map((versionItem,j)=>{
-            var versionImgURL = require("./images/"+versionItem+".png");
             return (
-                <img className="Answer-flexCellImg" 
-                     kye={j}
-                     src={versionImgURL} />
+                <Version name={versionItem}
+                         key={j}
+                         totalCount={optionCounts} />
             )
         });
 
@@ -66,7 +66,7 @@ var Answer = React.createClass({
 
     //console.log(screen.width);
     var width = (screen.width > 400) ? 400 : screen.width-20;
-    var height = width/2;
+    var height = 200;//width/2;
 
     var chartItem = this.props.completed ? 
     <Chart width={width} 
