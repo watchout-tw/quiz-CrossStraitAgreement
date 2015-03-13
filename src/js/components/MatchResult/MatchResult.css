@@ -1,8 +1,7 @@
 .MatchResult {
-	border-top: 10px dashed #333333;
 	margin: 0px auto 80px auto;
 	max-width: 600px;
-	padding-top: 50px;
+	//padding-top: 50px;
 }
 .MatchResult-topMatch {
 	font-weight: 800;

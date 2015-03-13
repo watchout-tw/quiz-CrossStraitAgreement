@@ -8,6 +8,7 @@ var MatchResult = require('../MatchResult/MatchResult.jsx');
 
 var AppStore = require('../../stores/AppStore');
 var AppActions = require('../../actions/AppActions');
+var randomNum = Math.floor(Math.random() * 100 % 5)+1;
 
 require('./App.css');
 
@@ -114,14 +115,21 @@ var App = React.createClass({
         currentQAItemIndex: this.state.currentQAItemIndex+1
       });
 
-      /////
+      ////////////////////// FINAL // 
       var questionCount = Object.keys(this.state.data).length;//questionCount
       if(this.state.currentQAItemIndex === questionCount){
+        
+        // Scroll to gif
+        // 250 is a magic number...
+        var target = $(".App-resultButton");
+        $("html,body").animate({
+            scrollTop: target.offset().top + 250
+         }, 500);
+        console.log(target.offset().top);
+
         var cb = this._onShowMatchResult;
         setTimeout(function(){
           cb();
-          
-
         }, 3000);
       }
   },
@@ -144,16 +152,30 @@ var App = React.createClass({
     var questionCount = Object.keys(this.state.data).length;//questionCount
   	
     
-    var imgUrl = require("./images/resultTransit.gif");
+    var gifUrl = require("./images/resultTransit.gif");
+    
+    var imgUrl = require("./images/"+randomNum+".png");
     
     //debug//var matchResultButton = Object.keys(this.state.answers).length >= 2 ? 
-    var matchResultButton = (Object.keys(this.state.answers).length === questionCount && !this.state.showMatchResult)? 
-    <div className="App-resultButton">
-        和我最接近的兩岸監督條例是...
-        <img className="App-resultImg"
-             src={imgUrl} />
-    </div> : "";
+    var matchResultButton = "";
+    if(Object.keys(this.state.answers).length === questionCount){
+       if(!this.state.showMatchResult){
+          matchResultButton = <div className="App-resultButton is-actived">和我最接近的兩岸監督條例是...
+                                  <img className="App-resultImg" 
+                                        src={gifUrl} />
+                              </div>;
+       }else{
+          matchResultButton = <div className="App-resultButton is-completed">
+                                  <img className="App-resultImg" 
+                                        src={imgUrl} />
+                              </div>;
+       }
 
+    }else{
+         matchResultButton = <div className="App-resultButton"></div>;
+    }
+    
+    
     var matchResultItem = this.state.showMatchResult ? 
         <div className="App-resultSection is-actived"><MatchResult data={this.state.match} /></div> : 
         <div className="App-resultSection"></div>;

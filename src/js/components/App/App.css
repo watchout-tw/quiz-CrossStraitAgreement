@@ -5,10 +5,24 @@
 	
 }
 .App-resultButton {
-	padding: 10px;
-	cursor: pointer;
+	width: 0;
+	overflow: hidden;
+}
+.App-resultButton.is-actived{
+	padding-top: 20vh;
+	//background: yellow;
+	//cursor: pointer;
 	width: 100px;
 	margin: 0 auto;
+	height: 80vh;
+	margin-bottom: 20vh;
+
+}
+.App-resultButton.is-completed{
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
+
 }
 .App-resultImg {
 	width: 100px;
