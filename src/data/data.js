@@ -138,7 +138,7 @@ module.exports =
     "title" : "國會在協商進行中的參與監督",
     "description" : "你認為國會在政府進行兩岸協商談判時，應該如何參與監督？",
     "options" : [
-    {
+            {
               "index" : "A",
               "content" : "無須規定",
               "versions" : []

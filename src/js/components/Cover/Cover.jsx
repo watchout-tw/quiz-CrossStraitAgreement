@@ -18,6 +18,14 @@ var Cover = React.createClass({
         scrollTop: target.offset().top
      }, 500);
   },
+  _onGoToIntro(){
+    // Scroll to intro
+    var target = $(".Cover-intro");
+    $("html,body").animate({
+        scrollTop: target.offset().top
+     }, 500);
+
+  },
   render () {
   	var EDUimgURL = require("./images/EDU.jpg");
     var watchoutURL = require("./images/watchout.png");
@@ -33,23 +41,26 @@ var Cover = React.createClass({
 
     return (
       <div>
-          <div className="Cover-Hero">
-              <div className="Cover-LogoSets">
-                  <img className="Cover-Logo" src={EDUimgURL} />
-                  <img className="Cover-Logo" src={watchoutURL} />
+          <div className="Cover-hero">
+              <div className="Cover-logoSets">
+                  <img className="Cover-logo" src={EDUimgURL} />
+                  <img className="Cover-logo" src={watchoutURL} />
               </div>
 
               <div className="Cover-heroContent">
                   <div className="Cover-heroTitle">兩岸監督條例<br/>人民來立法</div>
                   <img className="Cover-heroImage"
                        src={heroImg} />
+                  <div className="Cover-activateButton">
+                     <div className="Cover-arrowBox"
+                          onClick={this._onGoToIntro}>開啟副本 #112</div>
+                  </div>
               </div>
           </div>
-          <div className="Cover-Intro">
+          <div className="Cover-intro">
               <div className="Cover-content">
                   <div className="Cover-title">
                         <div className="Cover-titleMain">副本說明</div>
-                        <div className="Cover-titleSub">民意大搜查・千人揪副本</div>
                   </div>
                   <div className="Cover-description">
                       <p>2014年，由立委張慶忠「30秒審查服貿」的爭議，引發學生及公民團體的「318佔領立法院」行動中，提出「先立法，再審查」及「制定兩岸協議監督條例」的訴求。兩岸協議監督條例，目的是為了制訂關於以後兩岸之間簽協議的遊戲規則。</p>

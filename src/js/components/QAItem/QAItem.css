@@ -2,8 +2,8 @@
 .QAItem {
 	position: relative;
 	display: none;
-	border-top: 10px dashed #333333;
-	padding: 50px 0px 100px 0px;
+	//border-top: 10px dashed #333333;
+	padding: 50px 0px 0px 0px;
 	margin: 0px 10px;
 
 } 
@@ -13,8 +13,8 @@
 		margin: 0 auto;
 	    position: relative;
 	    display: none;
-	    border-top: 10px dashed #333333;
-	    padding: 100px 0px;
+	    //border-top: 10px dashed #333333;
+	    padding-top: 50px 0px 0px 0px;
     } 
 }
 .QAItem.is-active {
