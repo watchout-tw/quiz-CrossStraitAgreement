@@ -21,6 +21,7 @@ var Cover = React.createClass({
   render () {
   	var EDUimgURL = require("./images/EDU.jpg");
     var watchoutURL = require("./images/watchout.png");
+    var heroImg = require("./images/Cover.png");
 
     var versionItem = versions.map((item, i)=>{
         return (
@@ -38,8 +39,10 @@ var Cover = React.createClass({
                   <img className="Cover-Logo" src={watchoutURL} />
               </div>
 
-              <div className="Cover-content">
-                  <div className="Cover-heroImage">主視覺</div>
+              <div className="Cover-heroContent">
+                  <div className="Cover-heroTitle">兩岸監督條例<br/>人民來立法</div>
+                  <img className="Cover-heroImage"
+                       src={heroImg} />
               </div>
           </div>
           <div className="Cover-Intro">
