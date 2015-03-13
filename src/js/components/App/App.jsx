@@ -31,7 +31,8 @@ var App = React.createClass({
       answers: {
         // Format // "Question1":"A"
       },
-      match: {}
+      match: {},
+      showMatchResult: false
 
     }
   },
@@ -39,6 +40,8 @@ var App = React.createClass({
   //把 view 註冊到 stores，當 store 有改變/emit change 的時候，用 _onChange 這個 callback 處理
   componentDidMount () {
     AppStore.addChangeListener(this._onChange);
+
+    
     
   },
   
@@ -57,9 +60,29 @@ var App = React.createClass({
     
   },
 
+  _onShowMatchResult (){
+    
+    this.setState({
+      showMatchResult: true
+    });
+    
+    // Scroll to answer section
+    var ansID = ".App-resultSection";
+    var target = $(ansID);
+
+    $("html,body").animate({
+        scrollTop: target.offset().top
+     }, 500);
+
+
+  },
+
   _recordAnswer (item) {
 
       var currentAns = this.state.answers;
+
+      if(currentAns[item.id]) return false;//如果已經回答過，不再重複登記
+
       currentAns[item.id] = item.index;
       this.setState({
         answers: currentAns
@@ -78,7 +101,8 @@ var App = React.createClass({
           }
       });
 
-      //console.log(this.state.match);
+      console.log(this.state.match);
+      return true;
   
       // TODO 紀錄總測驗人次
       // 全部答完的才算嗎？
@@ -89,6 +113,17 @@ var App = React.createClass({
       this.setState({
         currentQAItemIndex: this.state.currentQAItemIndex+1
       });
+
+      /////
+      var questionCount = Object.keys(this.state.data).length;//questionCount
+      if(this.state.currentQAItemIndex === questionCount){
+        var cb = this._onShowMatchResult;
+        setTimeout(function(){
+          cb();
+          
+
+        }, 3000);
+      }
   },
 
   render () {
@@ -107,14 +142,28 @@ var App = React.createClass({
     });
 
     var questionCount = Object.keys(this.state.data).length;//questionCount
-  	var matchResultItem = Object.keys(this.state.answers).length >= questionCount ? <MatchResult data={this.state.match} /> : "";
+  	
     
-    //debug
-    //var matchResultItem = Object.keys(this.state.answers).length >= 1 ? <MatchResult data={this.state.match} /> : "";
+    var imgUrl = require("./images/resultTransit.gif");
+    
+    //debug//var matchResultButton = Object.keys(this.state.answers).length >= 2 ? 
+    var matchResultButton = (Object.keys(this.state.answers).length === questionCount && !this.state.showMatchResult)? 
+    <div className="App-resultButton">
+        和我最接近的兩岸監督條例是...
+        <img className="App-resultImg"
+             src={imgUrl} />
+    </div> : "";
+
+    var matchResultItem = this.state.showMatchResult ? 
+        <div className="App-resultSection is-actived"><MatchResult data={this.state.match} /></div> : 
+        <div className="App-resultSection"></div>;
+   
+    
     return (
       <div className="App">
            <Cover />
            {qaItems}
+           {matchResultButton}
            {matchResultItem}
       </div>
     );

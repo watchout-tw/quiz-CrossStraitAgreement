@@ -30,11 +30,11 @@ var Version = React.createClass({
 
     //////// NEEDS refactor
     var result = "";
-    if(this.props.cover){
+    if(this.props.type === "cover"){
 
     	//Larger
-    	var textItem = peopleVersion === name ? <div className="version-text">{title}<br/>即民間團體版</div> : 
-        <div className="version-text">{title}</div> ;
+    	var textItem = peopleVersion === name ? <div className="Version-text">{title}<br/>即民間團體版</div> : 
+        <div className="Version-text">{title}</div> ;
 
         result = (
         <div className="Version">
@@ -45,12 +45,27 @@ var Version = React.createClass({
 
         );
 
+    }else if((this.props.type === "result")){
+
+
+        var textItem = peopleVersion === name ? <div className="Version-text--result">{title}<br/>即民間團體版</div> : 
+        <div className="Version-text--result">{title}</div> ;
+
+        result = (
+        <div className="Version--result">
+            <img className="Version-img--result" 
+                 src={imgUrl} />
+            {textItem}
+        </div>
+
+        );
+
     }else{
 
     	//Smaller
 
-    	var textItem = (this.props.totalCount > 3) ? <div className="version-text--smallInline">{title}</div> :
-    	<div className="version-text--small">{title}</div> ;
+    	var textItem = (this.props.totalCount > 3) ? <div className="Version-text--smallInline">{title}</div> :
+    	<div className="Version-text--small">{title}</div> ;
 
     	result = (
         <div className="Version--small">

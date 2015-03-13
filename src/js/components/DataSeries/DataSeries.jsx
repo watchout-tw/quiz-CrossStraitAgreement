@@ -43,8 +43,8 @@ var DataSeries = React.createClass({
 
            var color = props.defaultColor;
            
-           console.log("-------");
-           console.log(highlightIndex);
+           //console.log("-------");
+           //console.log(highlightIndex);
            if(highlightIndex.length){
               highlightIndex.map(function (obj, index) {
                   if(obj.charCodeAt(0)-65 === i) // A, B, C, D to 0, 1, 2, 3
@@ -53,7 +53,7 @@ var DataSeries = React.createClass({
 
            }
            
-           // console.log(point);
+           // console.log("POINT:"+point);
            // console.log(yScale(point));
 
            return (

@@ -53,7 +53,7 @@ var MatchResult = React.createClass({
         //     quantity: data[key]
         // });
         
-        versionObj[key].count += data[key];
+        versionObj[key].count = data[key];
         
         ///
         votesTotal += data[key];
@@ -83,6 +83,7 @@ var MatchResult = React.createClass({
     var highlightIndex = [];
     var topCount = array[0] ? array[0].count : 100;
     var topMatchItems = "";
+
     topMatchItems = array.map((item, index)=>{
         if(item.count === topCount){
             var split = (index === 0) ? "":"、";
@@ -92,7 +93,7 @@ var MatchResult = React.createClass({
             )
         }
     });
-    topMatchItems = <div className="MatchResult-topMatch">和你最相近的版本是：<br/>{topMatchItems}</div>;
+    topMatchItems = <div className="MatchResult-topMatch">哇嗚！和我最相近的版本是：<br/>{topMatchItems}</div>;
     
 
     //////////////////////
@@ -113,18 +114,22 @@ var MatchResult = React.createClass({
     	return b.count-a.count;
     });
     
-    var votesPercentageArray = matchArray.map((item, i)=>{
-    	console.log(item.count);
+    var votesArray = matchArray.map((item, i)=>{
+    	//console.log(item.count);
         //return Math.round((item.count/votesTotal)*100, 0);
         return item.count;
     });
+    console.log("***");
+    console.log(votesArray);
+
     var resultChartItem = (
-    <Chart width={width} 
+    <Chart className="MatchResult-chart"
+           width={width} 
            height={height}>
         <DataSeries 
            percentage={false}
            type="BarChart"
-           data={votesPercentageArray} 
+           data={votesArray} 
            width={width}
            height={height}
            defaultColor="#999"
@@ -139,7 +144,7 @@ var MatchResult = React.createClass({
         return (
             <div className="MatchResult-flexCell"
                  key={i}>
-                 <Version cover={true}
+                 <Version type={"result"}
                           name={item.id}
                           key={i}
                           totalCount={votesTotal} />
@@ -165,14 +170,11 @@ var MatchResult = React.createClass({
     // });
 
     return (
-      <div className="MatchResult">
+        <div className="MatchResult">
           {topMatchItems}
           {resultChartItem}
           <div className="MatchResult-flexGrid"> {versionItems}</div>
-          
-         
-          
-      </div>
+        </div>
     );
   }
 });

@@ -13,12 +13,20 @@ var Bar = React.createClass({
   },
 
   componentDidMount: function() {
-      var height = this.props.height;// || 1;
+    this._renderGraph();  
+     
+  },
+
+  _renderGraph: function () {
+    //console.log("RENDER:"+this.props.value+", height: "+this.props.height);
+
+    var height = this.props.height;
+
       d3.select(this.getDOMNode())
         .select("rect")
         .transition().duration(1000)
-        .attr('y', this.props.availableHeight - this.props.height)
-        .attr('height', this.props.height);
+        .attr('y', this.props.availableHeight - height)
+        .attr('height', height);
 
       // console.log(this.getDOMNode());
       // d3.select(this.getDOMNode())
@@ -29,7 +37,17 @@ var Bar = React.createClass({
       //   .text("hello");c
       
       // TODO: label animation
-     
+  },
+
+  componentWillReceiveProps: function(nextProps) {
+      // if( nextProps.height !== this.props.height){
+      //     console.log("NEXT HEIGHT: "+nextProps.height);
+      //     console.log(this.props.height);
+
+      //     this._renderGraph();
+      // }
+      //this._renderGraph();
+  
   },
 
   render: function() {

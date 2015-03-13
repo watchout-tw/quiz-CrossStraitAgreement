@@ -20,8 +20,10 @@ var QAItem = React.createClass({
     
 
     // Reocrd user's answer
-    this.props.recordAnswerHandler(i);
-
+    var validVote = this.props.recordAnswerHandler(i);
+    
+    if(!validVote) return;
+    
     // Set question as completed -> activate answer section
     this.setState({
       completed: true

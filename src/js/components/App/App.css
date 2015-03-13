@@ -4,6 +4,22 @@
 	
 	
 }
+.App-resultButton {
+	padding: 10px;
+	cursor: pointer;
+	width: 100px;
+	margin: 0 auto;
+}
+.App-resultImg {
+	width: 100px;
+}
+.App-resultSection {
+	height: 0px;
+	overflow: hidden;
+}
+.App-resultSection.is-actived {
+	height: auto;
+}
 @media screen and (min-width: 960px){
     .App {
 	   margin: 0 auto;

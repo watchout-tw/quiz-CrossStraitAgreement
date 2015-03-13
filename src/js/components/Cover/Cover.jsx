@@ -26,7 +26,7 @@ var Cover = React.createClass({
         return (
             <Version name={item}
                      key={i}
-                     cover={true} />
+                     type={"cover"} />
         );
     });
 
