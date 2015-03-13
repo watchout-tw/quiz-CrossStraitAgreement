@@ -105,12 +105,17 @@ var App = React.createClass({
                     recordAnswerHandler={this._recordAnswer} />
         )
     });
-  	
+
+    var questionCount = Object.keys(this.state.data).length;//questionCount
+  	var matchResultItem = Object.keys(this.state.answers).length >= questionCount ? <MatchResult data={this.state.match} /> : "";
+    
+    //debug
+    //var matchResultItem = Object.keys(this.state.answers).length >= 1 ? <MatchResult data={this.state.match} /> : "";
     return (
       <div className="App">
            <Cover />
            {qaItems}
-           <MatchResult data={this.state.match} />
+           {matchResultItem}
       </div>
     );
   }

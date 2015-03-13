@@ -13,6 +13,7 @@ var Bar = React.createClass({
   },
 
   componentDidMount: function() {
+      var height = this.props.height;// || 1;
       d3.select(this.getDOMNode())
         .select("rect")
         .transition().duration(1000)
@@ -34,7 +35,9 @@ var Bar = React.createClass({
   render: function() {
     
 
-    var label = this.props.value + " %";
+    var label = (this.props.percentage) ? this.props.value + " %" : this.props.value;
+    var xOffset = (this.props.percentage) ? (this.props.offset + this.props.width/2 - 18) : (this.props.offset + this.props.width/2 - 6);
+
     return (
       <g>
           <rect fill={this.props.color}
@@ -42,7 +45,7 @@ var Bar = React.createClass({
                 height="0"
                 x={this.props.offset} 
                 y={this.props.availableHeight - 0} />
-          <text x={this.props.offset + this.props.width/2 - 18} 
+          <text x={xOffset} 
                 y={this.props.availableHeight - 10}
                 fontSize="20px"
                 fill="black"

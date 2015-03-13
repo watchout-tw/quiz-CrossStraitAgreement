@@ -7,6 +7,7 @@ require('./Answer.css');
 var Chart = require('../Chart/Chart.jsx');
 var DataSeries = require('../DataSeries/DataSeries.jsx');
 var Version = require('../Version/Version.jsx');
+$ = require('jquery');
 
 var Answer = React.createClass({
   
@@ -64,21 +65,22 @@ var Answer = React.createClass({
     
     var answerID = this.props.id + "Answer";///// SET answer/result part's id
 
-    console.log(screen.width);
-    var width = (screen.width > 400) ? 400 : screen.width-20;
-    var height = (screen.width > 400) ? 300 : 200;
+    console.log($(window).width());
+    var width = ($(window).width() > 400) ? 400 : $(window).width()-20;
+    var height = ($(window).width() > 400) ? 300 : 200;
 
     var chartItem = this.props.completed ? 
     <Chart width={width} 
            height={height}>
         <DataSeries 
+           percentage={true}
            type="BarChart"
            data={votesPercentageArray} 
            width={width}
            height={height}
            defaultColor="#999"
            highlightColor="#F2DB5D"
-           highlightIndex={this.props.userVote} />
+           highlightIndex={[this.props.userVote]} />
     </Chart> : "";
 
     return (

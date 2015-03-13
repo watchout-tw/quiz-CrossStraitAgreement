@@ -34,20 +34,31 @@ var DataSeries = React.createClass({
     var chart = <g></g>;
 
     if(this.props.type==="BarChart"){
-        
-
-        // A, B, C, D to 0, 1, 2, 3
-        var highlightIndex = this.props.highlightIndex.charCodeAt(0)-65;//65:'A'
-        //console.log(this.props.highlightIndex);
-
         //////// 有時候 height 會是 NaN //////// NEEDS TO BE FIXED
-
+       
+        var highlightIndex = this.props.highlightIndex;
+        
         // Bar Chart
         var bars = this.props.data.map(function(point, i) {
 
-           var color = (highlightIndex === i) ? props.highlightColor : props.defaultColor;
+           var color = props.defaultColor;
+           
+           console.log("-------");
+           console.log(highlightIndex);
+           if(highlightIndex.length){
+              highlightIndex.map(function (obj, index) {
+                  if(obj.charCodeAt(0)-65 === i) // A, B, C, D to 0, 1, 2, 3
+                      color = props.highlightColor;
+              })
+
+           }
+           
+           // console.log(point);
+           // console.log(yScale(point));
+
            return (
-             <Bar value={point}
+             <Bar percentage={props.percentage}
+                  value={point}
                   height={yScale(point)} 
                   width={xScale.rangeBand()} 
                   offset={xScale(i)} 
@@ -63,36 +74,36 @@ var DataSeries = React.createClass({
 
     }else if(this.props.type==="PieChart"){
 
-        var pie = d3.layout.pie()
+        // var pie = d3.layout.pie()
       
-        //這裡有點拉雜
-        var points = [];
+        // //這裡有點拉雜
+        // var points = [];
         
-        this.props.data.map((item, i)=>{
-            points.push(item.count);
-        });
-        var path = pie(points);
+        // this.props.data.map((item, i)=>{
+        //     points.push(item.count);
+        // });
+        // var path = pie(points);
 
-        this.props.data.map((item, i)=>{
-            item.point = path[i];
-        });
-        ///////////
+        // this.props.data.map((item, i)=>{
+        //     item.point = path[i];
+        // });
+        // ///////////
 
-        var bars = this.props.data.map(function(point, i) {
-          return (
-            <Pie data={point} 
-                 key={i}/>
-          )
-        });
+        // var bars = this.props.data.map(function(point, i) {
+        //   return (
+        //     <Pie data={point} 
+        //          key={i}/>
+        //   )
+        // });
         
  
-        //translate( width/2 , height / 2)
-        var translateX = this.props.width/2;
-        var translateY = this.props.height/2;
-        var transformFomula = "translate("+translateX+","+translateY+")";
-        chart = (
-          <g transform={transformFomula}>{bars}</g>
-        );
+        // //translate( width/2 , height / 2)
+        // var translateX = this.props.width/2;
+        // var translateY = this.props.height/2;
+        // var transformFomula = "translate("+translateX+","+translateY+")";
+        // chart = (
+        //   <g transform={transformFomula}>{bars}</g>
+        // );
 
     }else {
        //
