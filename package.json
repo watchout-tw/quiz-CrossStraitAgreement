@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "private": true,
   "scripts": {
-    "start": "webpack-dev-server --content-base build/",
+    "start": "npm run build && node server.js",
     "dev": "webpack-dev-server --devtool eval --hot --progress --colors --content-base build/",
     "build": "webpack -p --content-base build/",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -24,10 +25,13 @@
   },
   "dependencies": {
     "d3": "^3.5.5",
+    "express": "^4.12.2",
+    "firebase": "^2.2.2",
     "flux": "~2.0.1",
     "jquery": "^2.1.3",
     "object-assign": "~2.0.0",
     "react": "^0.11.2",
-    "react-router": "^0.7.0"
+    "react-router": "^0.7.0",
+    "request": "^2.53.0"
   }
 }

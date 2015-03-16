@@ -2,11 +2,12 @@ module.exports = {
   entry: './src/js/main.js',
   output: {
     path: './build',
+    publicPath: '/build/',
     filename: 'bundle.js'
   },
   module: {
     loaders: [
-      { test: /\.js$/, loader: 'jsx-loader?harmony' },
+      { test: /\.js$/, exclude: /node_modules/, loader: 'jsx-loader?harmony' },
       { test: /\.jsx$/, loader: 'jsx-loader?harmony' },
       { test: /\.less$/, loader: 'style-loader!css-loader!less-loader' }, // use ! to chain loaders
       { test: /\.css$/, loader: 'style-loader!css-loader' },
