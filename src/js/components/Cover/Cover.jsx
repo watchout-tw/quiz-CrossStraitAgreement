@@ -62,7 +62,7 @@ var Cover = React.createClass({
                   </div>
               </div>
           </div>
-          <div className="Cover-about">本測驗內容及版本對照由經濟民主連合提供，網頁由沃草製作。</div>
+          <div className="Cover-about">本測驗內容及版本對照由經濟民主連合提供，網頁由沃草製作</div>
           <div className="Cover-intro">
               <div className="Cover-content">
                   <div className="Cover-title">

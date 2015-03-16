@@ -93,7 +93,10 @@ var MatchResult = React.createClass({
             )
         }
     });
-    topMatchItems = <div className="MatchResult-topMatch">哇嗚！和我最相近的版本是：<br/>{topMatchItems}</div>;
+    topMatchItems = <div className="MatchResult-topMatch">
+       
+       <div>和我最相近的版本是：<br/>{topMatchItems}</div>
+    </div>;
     
 
     //////////////////////

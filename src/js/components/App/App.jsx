@@ -3,8 +3,8 @@
 var React = require('react/addons');
 var Cover = require('../Cover/Cover.jsx');
 var QAItem = require('../QAItem/QAItem.jsx');
-
 var MatchResult = require('../MatchResult/MatchResult.jsx');
+var CompleteMessage = require('../CompleteMessage/CompleteMessage.jsx');
 
 var AppStore = require('../../stores/AppStore');
 var AppActions = require('../../actions/AppActions');
@@ -205,13 +205,16 @@ var App = React.createClass({
         <div className="App-resultSection is-actived"><MatchResult data={this.state.match} /></div> : 
         <div className="App-resultSection"></div>;
    
-    
+    var completeMessageItem = this.state.showMatchResult ? 
+        <CompleteMessage copyIndex={this.state.totalCount+1}/> : "";
+
     return (
       <div className="App">
            <Cover totalCount={this.state.totalCount} />
            {qaItems}
            {matchResultButton}
            {matchResultItem}
+           {completeMessageItem}
       </div>
     );
   }
