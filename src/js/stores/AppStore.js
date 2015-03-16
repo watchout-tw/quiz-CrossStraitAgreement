@@ -23,8 +23,9 @@ var Firebase = require('firebase');
 // Private vars & method
 
 // 定義 store 需要的變數和 method，外界看不到
-var _data = require('../../data/data.js');
-
+var _data = {};
+_data.questions = require('../../data/data.js');// Question data
+_data.totalVote = 0;
 
 //利用 assign 做部分 update
 //updates 為需要更新的部分, {key: value}
@@ -34,14 +35,32 @@ function _update(updates) {
   
   // A, B, C, D to 0, 1, 2, 3
   var index = updates.index.charCodeAt(0)-65;//65:'A'
-  var ref = new Firebase('https://qa10.firebaseio.com/'+updates.id+'/votes/'+index);
+  var ref = new Firebase('https://qa10.firebaseio.com/questionVotesRecord/'+updates.id+'/votes/'+index);
   ref.transaction(function (current_value) {
     return (current_value || 0) + 1;
   });
-  
 
 }
+function _getTotalCount() {
+  
+  var ref = new Firebase('https://qa10.firebaseio.com/totalVotesCount');
+  ref.on('value', function(snap) {
 
+      _data.totalVote = snap.val().votes;
+      console.log("TOTAL TEST COUNT:"+_data.totalVote);
+      AppStore.emitChange();
+
+  });
+
+}
+function _updateTotalCount() {//+1
+  
+  var ref = new Firebase('https://qa10.firebaseio.com/totalVotesCount/votes');
+  ref.transaction(function (current_value) {
+    return (current_value || 0) + 1;
+  });
+
+}
 
 //========================================================================
 //
@@ -73,29 +92,30 @@ var AppStore = merge(EventEmitter.prototype, {
 
 //========================================================================
 //
-// Load vote data
+// Load vote data & total count
 
-var ref = new Firebase('https://qa10.firebaseio.com/');
+var ref = new Firebase('https://qa10.firebaseio.com/questionVotesRecord');
 ref.on('value', function(snap) {
   
   var votes = snap.val();
-  for(var key in _data){
+  for(var key in _data.questions){
       if(votes[key]){
         
         //console.log(votes[key]);
         //console.log(_data[key].options);
-        
+
         //Update voting data
-        for(var i in _data[key].options){
+        for(var i in _data.questions[key].options){
             //console.log(_data[key].options[i].votes);
             //console.log(votes[key].votes[i]);
-            _data[key].options[i].votes = votes[key].votes[i];
+            _data.questions[key].options[i].votes = votes[key].votes[i];
         }
   
       }
   }
 
-  AppStore.emitChange();
+  _getTotalCount();
+  // AppStore.emitChange();
 
 });
 
@@ -110,12 +130,17 @@ ref.on('value', function(snap) {
 AppDispatcher.register(function(action) {
   
   switch(action.actionType) {
-
+    
     case AppConstants.VOTE_UPDATE:
-      _update(action.item)
+      _update(action.item);
       AppStore.emitChange();
       break;
     
+    case AppConstants.VOTE_UPDATE_TOTAL_COUNT:
+      _updateTotalCount();
+      AppStore.emitChange();
+      break;
+
     default:
       // no op
   }

@@ -13,13 +13,23 @@ var randomNum = Math.floor(Math.random() * 100 % 5)+1;
 require('./App.css');
 
 function getData(){
-  var obj = AppStore.getData();
+
+  var obj = AppStore.getData().questions;
+
   var data = [];
   for(var key in obj){
     data.push(obj[key]);
   }
+
   return data;
 }
+
+//NEED 優化
+function getTotalCount(){
+  return AppStore.getData().totalVote;
+
+}
+
 
 var App = React.createClass({
   
@@ -28,6 +38,7 @@ var App = React.createClass({
   getInitialState(){
     return {
       data: getData(),
+      totalCount: getTotalCount(),
       currentQAItemIndex: 1,
       answers: {
         // Format // "Question1":"A"
@@ -55,6 +66,15 @@ var App = React.createClass({
       this.setState({
         data: getData()
       });
+      this._onReceivingTotalCount();
+  },
+
+  _onReceivingTotalCount (){
+      if(this.state.totalCount === 0){
+          this.setState({
+              totalCount: getTotalCount()
+          });
+      }
   },
 
   _onAnswer (i, event) {
@@ -92,6 +112,11 @@ var App = React.createClass({
       // Update vote counts in firebase
       AppActions.update(item);
 
+      // Update total vote counts in firebase 如果是第一題，把答題總人數 +1
+      if(item.id === "Question1"){
+        AppActions.updateTotalVoteCounts();
+      }
+      
       // 紀錄和哪個版本最像
       // console.log(item.versions);
       item.versions.map((value,index)=>{
@@ -183,7 +208,7 @@ var App = React.createClass({
     
     return (
       <div className="App">
-           <Cover />
+           <Cover totalCount={this.state.totalCount} />
            {qaItems}
            {matchResultButton}
            {matchResultItem}

@@ -39,6 +39,9 @@ var Cover = React.createClass({
         );
     });
 
+    var totalCountIndex = (this.props.totalCount) ? <div className="Cover-arrowBox"
+                          onClick={this._onGoToIntro}>開啟副本#{this.props.totalCount+1}</div> : "";
+
     return (
       <div>
           <div className="Cover-hero">
@@ -48,12 +51,14 @@ var Cover = React.createClass({
               </div>
 
               <div className="Cover-heroContent">
-                  <div className="Cover-heroTitle">兩岸監督條例<br/>人民來立法</div>
+                  <div className="Cover-heroText">
+                      <div className="Cover-heroSub">兩岸監督條例，人民來立法</div>
+                      <div className="Cover-heroTitle">民意大搜查<br/>千人揪副本</div>
+                  </div>
                   <img className="Cover-heroImage"
                        src={heroImg} />
                   <div className="Cover-activateButton">
-                     <div className="Cover-arrowBox"
-                          onClick={this._onGoToIntro}>開啟副本 #112</div>
+                      {totalCountIndex}
                   </div>
               </div>
           </div>
@@ -67,7 +72,7 @@ var Cover = React.createClass({
                       <p>目前立法院中陸續提出八個版本的草案：</p>
                       {versionItem}
 
-                      <p>而目前這些版本的草案，雖已通過一讀程序，但仍未付委(交付內政委員會審查)。</p>
+                      <p>而目前這些版本的草案，雖已通過一讀程序，但仍未付委（交付內政委員會審查）。</p>
                       <p>而這個會期，國、民兩黨都將兩岸監督條例列為優先法案，但面對各版本間的爭議，立委們要如何解決呢？各位公民心中最理想的兩岸協議監督條例，又應該有哪些規定呢？邀請各位公民，一起來立法！只要三分鐘，投票支持你心中最好的制度！</p>
                   </div>
                   <div className="Cover-button"

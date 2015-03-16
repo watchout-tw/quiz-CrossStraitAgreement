@@ -94,38 +94,57 @@
     display: inline-block;
     vertical-align: top;
 }
-.Cover-heroTitle {
+
+.Cover-heroText {
+    text-align: center;
+    padding-top: 20px;
+}
+.Cover-heroSub {
+    font-size: 18px;
+}
+.Cover-heroTitle{ 
     font-size: 40px;
     font-weight: 900;
-    text-align: left;
-    padding: 10px 30px 10px 10px;
-    
 }
-.Cover-heroImage { 
-   
+
+.Cover-heroImage {    
    width: 100%;
 }
 @media screen and (min-width: 800px){
-    .Cover-heroTitle {
+    .Cover-heroText {
        top: 40vh;
        left: 20%;
-       
-       font-size: 40px;
-       font-weight: 900;
        position: absolute;
-       
        text-align: left;
-       
        box-shadow: 0px 5px 0px;
-
+       left: 10%;
+    
+    }
+}
+@media screen and (min-width: 1000px){
+    .Cover-heroText {
+       top: 40vh;
+       left: 20%;
+       position: absolute;
+       text-align: left;
+       box-shadow: 0px 5px 0px;
        left: 20%;
     
     }
+}
+@media screen and (min-width: 800px){
+    .Cover-heroTitle {
+       font-size: 40px;
+       font-weight: 900;
+       
+    }
+    .Cover-heroSub {
+       font-size: 18px;
+    }
    .Cover-heroImage { 
-        margin: 0px;
-        ;
-        width: 800px;
-        padding-left: 200px;
+       margin: 0px;
+       width: 800px;
+       padding-left: 200px;
 
    } 
 }
