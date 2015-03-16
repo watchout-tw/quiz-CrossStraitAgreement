@@ -44,6 +44,7 @@ var App = React.createClass({
         // Format // "Question1":"A"
       },
       match: {},
+      showResultIndicator: false,
       showMatchResult: false
 
     }
@@ -81,22 +82,7 @@ var App = React.createClass({
     
   },
 
-  _onShowMatchResult (){
-    
-    this.setState({
-      showMatchResult: true
-    });
-    
-    // Scroll to answer section
-    var ansID = ".App-resultSection";
-    var target = $(ansID);
-
-    $("html,body").animate({
-        scrollTop: target.offset().top
-     }, 500);
-
-
-  },
+  
 
   _recordAnswer (item) {
 
@@ -140,66 +126,94 @@ var App = React.createClass({
         currentQAItemIndex: this.state.currentQAItemIndex+1
       });
 
-      ////////////////////// FINAL // 
-      var questionCount = Object.keys(this.state.data).length;//questionCount
-      if(this.state.currentQAItemIndex === questionCount){
-        
-        // Scroll to gif
-        // 250 is a magic number...
-        var target = $(".App-resultButton");
-        $("html,body").animate({
-            scrollTop: target.offset().top + 250
-         }, 500);
-        console.log(target.offset().top);
+      
+  },
 
-        var cb = this._onShowMatchResult;
-        setTimeout(function(){
-          cb();
-        }, 3000);
-      }
+  _toNext(){
+
+      var target = $("#Question"+this.state.currentQAItemIndex);
+      $("html,body").animate({
+          scrollTop: target.offset().top + 250
+      }, 500);
+
+  },
+
+  _onShowMatchResult (){
+    
+    this.setState({
+      showMatchResult: true
+    });
+    
+    var target = $(".App-resultSection");
+    $("html,body").animate({
+        scrollTop: target.offset().top
+     }, 500);
+
+
+  },
+
+  _toResult (){
+    
+    this.setState({
+      showResultIndicator: true
+    });
+    
+    // Scroll to Result Indicator
+    var target = $(".App-resultSection");
+    $("html,body").animate({
+        scrollTop: target.offset().top
+     }, 500);
+
+    // 計算動畫
+    var cb = this._onShowMatchResult;
+    setTimeout(function(){
+      cb();
+    }, 3000);
+    
+
   },
 
   render () {
+
+    var questionCount = Object.keys(this.state.data).length;//questionCount
    
     var qaItems = this.state.data.map((item, index)=>{
         //console.log(item);
         var userVoteData = this.state.answers[item.id];
         return (
             <QAItem currentQAItemIndex={this.state.currentQAItemIndex}
+                    totalCount={questionCount}
                     data={item}
                     userVote={userVoteData}
                     key={index}
                     unlockHandler={this._unlockNextQAItem}
-                    recordAnswerHandler={this._recordAnswer} />
+                    recordAnswerHandler={this._recordAnswer}
+                    toNextHandler={this._toNext}
+                    toResultHandler={this._toResult} />
         )
     });
 
-    var questionCount = Object.keys(this.state.data).length;//questionCount
-  	
-    
     var gifUrl = require("./images/resultTransit.gif");
-    
     var imgUrl = require("./images/"+randomNum+".png");
     
-    //debug//var matchResultButton = Object.keys(this.state.answers).length >= 2 ? 
-    var matchResultButton = "";
-    if(Object.keys(this.state.answers).length === questionCount){
+    var matchResultIndicator = "";
+    if(this.state.showResultIndicator){
        if(!this.state.showMatchResult){
-          matchResultButton = <div className="App-resultButton is-actived">和我最接近的兩岸監督條例是...
-                                  <img className="App-resultImg" 
-                                        src={gifUrl} />
-                              </div>;
+          matchResultIndicator = <div className="App-calculateResult is-active">
+              和我最接近的兩岸監督條例是...
+              <img className="App-resultImg"
+                   src={gifUrl} />
+          </div>;
        }else{
-          matchResultButton = <div className="App-resultButton is-completed">
-                                  <img className="App-resultImg" 
-                                        src={imgUrl} />
-                              </div>;
-       }
+          matchResultIndicator = <div className="App-calculateResult.is-completed">
+              <img className="App-resultImg"
+                   src={imgUrl} />
+          </div>;
 
+       }
     }else{
-         matchResultButton = <div className="App-resultButton"></div>;
+       matchResultIndicator = <div className="App-calculateResult"></div>;
     }
-    
     
     var matchResultItem = this.state.showMatchResult ? 
         <div className="App-resultSection is-actived"><MatchResult data={this.state.match} /></div> : 
@@ -212,7 +226,7 @@ var App = React.createClass({
       <div className="App">
            <Cover totalCount={this.state.totalCount} />
            {qaItems}
-           {matchResultButton}
+           {matchResultIndicator}
            {matchResultItem}
            {completeMessageItem}
       </div>

@@ -39,3 +39,16 @@
 	line-height: 2;
 	text-align: left;
 }
+.QAItem-button {
+	cursor: pointer;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 6px 20px;
+    background: rgb(53,55,54);
+    color: white;
+    margin-bottom: 20px;
+}
+.QAItem-button:hover {
+	box-shadow: 5px 5px rgba(0,0,0,0.12);
+
+}

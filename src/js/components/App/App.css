@@ -1,14 +1,12 @@
 .App {
 	width: 100%;
 	position: relative;
-	
-	
 }
-.App-resultButton {
+.App-calculateResult {
 	width: 0;
 	overflow: hidden;
 }
-.App-resultButton.is-actived{
+.App-calculateResult.is-active{
 	padding-top: 20vh;
 	//background: yellow;
 	//cursor: pointer;
@@ -18,7 +16,7 @@
 	margin-bottom: 20vh;
 
 }
-.App-resultButton.is-completed{
+.App-calculateResult.is-completed{
 	width: 100px;
 	height: 100px;
 	margin: 0 auto;
@@ -27,6 +25,7 @@
 .App-resultImg {
 	width: 100px;
 }
+
 .App-resultSection {
 	height: 0px;
 	overflow: hidden;

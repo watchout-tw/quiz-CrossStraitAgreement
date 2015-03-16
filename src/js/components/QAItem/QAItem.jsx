@@ -18,27 +18,23 @@ var QAItem = React.createClass({
 
   _onAnswer (i, event) {// i: 選擇的答案 [A, B, C, D...]
     
-
     // Reocrd user's answer
     var validVote = this.props.recordAnswerHandler(i);
     
-    if(!validVote) return;
+    // Scroll to answer section
+    var ansID = "#" + this.props.data.id + "Answer";
+    var target = $(ansID);
+    $("html,body").animate({
+        scrollTop: target.offset().top
+    }, 500);
+
     
+    if(!validVote) return; // 如果使用者按第二次以上，只會跳到圖表，不會再投一次
+
     // Set question as completed -> activate answer section
     this.setState({
       completed: true
     });
-
-    // Scroll to answer section
-    var ansID = "#" + this.props.data.id + "Answer";
-    var target = $(ansID);
-
-    //console.log("slide to:");
-    //console.log(target.offset().top);
-    
-    $("html,body").animate({
-        scrollTop: target.offset().top
-     }, 500);
 
     // Unlock next question
     this.props.unlockHandler();
@@ -61,6 +57,16 @@ var QAItem = React.createClass({
     });
     //console.log(this.props.currentQAItemIndex);
 
+    var toNextItem = "";
+    //作答之後才顯示下一題 or 看結果的選項
+    if(this.state.completed){
+       toNextItem = (order === this.props.totalCount) ? 
+                    <div className="QAItem-button"
+                         onClick={this.props.toResultHandler}>看結果</div> :
+                    <div className="QAItem-button"
+                         onClick={this.props.toNextHandler}>下一題</div>;
+    }
+
     return (
       
       <div className={classes}
@@ -73,10 +79,13 @@ var QAItem = React.createClass({
                         id={id}
                         userVote={this.props.userVote} />
           </div>
-          <Answer completed={this.state.completed}
-                  data={options}
-                  id={id}
-                  userVote={this.props.userVote} />
+          <div className="QAItem-resultContnet">
+              <Answer completed={this.state.completed}
+                      data={options}
+                      id={id}
+                      userVote={this.props.userVote} />
+              {toNextItem}
+          </div>
       </div>
       
     );
