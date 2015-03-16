@@ -175,13 +175,13 @@
 }
 .Cover-titleMain {
 	padding: 4px 10px;
-    border-radius: 16px;
-    float: left;
-    font-size: 14px;
-    color: white;
-    display: inline-block;
-    background: #DB5948;
-    margin-bottom: 10px;
+  border-radius: 16px;
+  float: left;
+  font-size: 14px;
+  color: white;
+  display: inline-block;
+  background: #DB5948;
+  margin: 10px 0px;
     
 }
 .Cover-titleSub {
@@ -205,29 +205,27 @@
 	.Cover-content {
 		width: 800px;
 		margin: 0 auto;
-    }
-    
-    .Cover-title {
-    	margin-top: 5vh;
-    	display: inline-block;
-    	font-size: 26px;
-    	width: 100%;
-    	font-weight: 700;
-    	margin-bottom: 20px;	
-    }
-    .Cover-titleMain {
-    	font-size: 16px;
-        
-    }
-    .Cover-titleSub {
-    	font-size: 40px;
-    }
-    .Cover-description {
-    	text-align: left;
-    	background: white;
-      	padding: 5px 30px;
-      	box-shadow: 60px 0px 0px #EFE9D7, -60px 0px 0px #EFE9D7, 0px -10px 0px #EFE9D7, 0px 10px 0px #EFE9D7
-    }
+  }
+  .Cover-title {
+  	margin-top: 5vh;
+  	display: inline-block;
+  	font-size: 26px;
+  	width: 100%;
+  	font-weight: 700;
+  	margin-bottom: 20px;	
+  }
+  .Cover-titleMain {
+  	font-size: 16px;
+  }
+  .Cover-titleSub {
+  	font-size: 40px;
+  }
+  .Cover-description {
+  	text-align: left;
+  	background: white;
+    padding: 5px 30px;
+    box-shadow: 60px 0px 0px #EFE9D7, -60px 0px 0px #EFE9D7, 0px -10px 0px #EFE9D7, 0px 10px 0px #EFE9D7
+  }
 }
 .Cover-button {
 	/*
@@ -276,4 +274,20 @@
    50% {-ms-transform: rotate(0deg); -webkit-transform: rotate(0deg); transform: rotate(0deg);}
    75% {-ms-transform: rotate(-7deg); -webkit-transform: rotate(-7deg); transform: rotate(-7deg);}
   100% {-ms-transform: rotate(0deg); -webkit-transform: rotate(0deg); transform: rotate(0deg);}  
+}
+.Cover-about {
+
+  font-size: 12px;
+  color: rgb(100,100,100);
+  padding: 10px;
+}
+@media screen and (min-width: 600px){
+  .Cover-about {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      max-width: 200px;
+      font-size: 12px;
+      text-align: left;
+  }
 }

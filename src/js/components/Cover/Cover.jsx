@@ -62,6 +62,7 @@ var Cover = React.createClass({
                   </div>
               </div>
           </div>
+          <div className="Cover-about">本測驗內容及版本對照由經濟民主連合提供，網頁由沃草製作。</div>
           <div className="Cover-intro">
               <div className="Cover-content">
                   <div className="Cover-title">
@@ -74,6 +75,7 @@ var Cover = React.createClass({
 
                       <p>而目前這些版本的草案，雖已通過一讀程序，但仍未付委（交付內政委員會審查）。</p>
                       <p>而這個會期，國、民兩黨都將兩岸監督條例列為優先法案，但面對各版本間的爭議，立委們要如何解決呢？各位公民心中最理想的兩岸協議監督條例，又應該有哪些規定呢？邀請各位公民，一起來立法！只要三分鐘，投票支持你心中最好的制度！</p>
+
                   </div>
                   <div className="Cover-button"
                        onClick={this._onStartTest}>GO!</div>
