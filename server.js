@@ -12,8 +12,12 @@ app.get('/', function (req, res) {
   var diff = 0, currentLevel = 1;
   var html = fs.readFileSync(__dirname + '/index.html', { encoding:'utf8' });
 
+
+
   return request.get('https://qa10.firebaseio.com/totalVotesCount.json', function(err, response, body){
     var votes = Number(JSON.parse(body).votes);
+    if(!req.query.lv) return res.redirect('/?lv=' + currentLevel + '&votes=' + votes);
+
     if( 0 <= votes && votes < 299) {
       diff = 300 - votes;
     } else if ( 300 <= votes && votes < 499 ){
