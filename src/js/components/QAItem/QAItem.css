@@ -48,6 +48,9 @@
     color: white;
     margin-bottom: 20px;
 }
+.QAItem-resultContnet {
+	text-align: center;
+}
 .QAItem-button:hover {
 	box-shadow: 5px 5px rgba(0,0,0,0.12);
 

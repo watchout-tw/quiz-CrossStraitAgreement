@@ -200,7 +200,7 @@ var App = React.createClass({
     if(this.state.showResultIndicator){
        if(!this.state.showMatchResult){
           matchResultIndicator = <div className="App-calculateResult is-active">
-              和我最接近的兩岸監督條例是...
+              <span className="App-calculateText">和我最接近的兩岸監督條例是...</span>
               <img className="App-resultImg"
                    src={gifUrl} />
           </div>;

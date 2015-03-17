@@ -1,24 +1,13 @@
 .CompleteMessage {
 	background: #F2DB5D;
-	padding-bottom: 50px;
+	padding: 50px 0px;
 }
 .CompleteMessage-title {
 	font-size: 20px;
 	font-weight: 800;
-	text-decoration: center;
+	text-align: center;
 	padding: 0px 10px;
 	
-}
-.CompleteMessage-share {
-	margin: 20px auto;
-	//font-size: 30px;
-	border: 1px solid;
-	display: inline-block;
-	cursor: pointer;
-
-}
-.CompleteMessage-share:hover {
-    /*box-shadow: 8px 0px 0px black, -8px 0px 0px black;*/
 }
 .CompleteMessage-item {
     padding: 10px;
@@ -31,13 +20,76 @@
         text-align: left;
 	}
 }
+
+.CompleteMessage-promote {
+	position: relative;
+	cursor: pointer;
+	margin: 0 auto 80px auto;
+
+}
+@media screen and (min-width: 400px){
+	.CompleteMessage-promote {
+		width: 400px;
+	}
+}
+
+.CompleteMessage-img {
+	width: 100%;
+	margin: 10px 0px;
+    border: 8px solid white;
+}
+.CompleteMessage-img:hover {
+	box-shadow: 8px 10px rgba(0,0,0,0.12);
+}
+.CompleteMessage-diff {
+	font-weight: 800;
+	text-align: center;
+}
+.CompleteMessage-share {
+    font-size: 18px;
+    font-weight: 800;
+    text-align: center;
+    color: white;
+    padding: 10px 0px;
+    margin: 10px 5px;
+    box-shadow: 4px 6px rgba(0,0,0,0.12);
+    background: #33A5A2;
+    border: 3px solid #33A5A2;
+  
+}
+@media screen and (min-width: 400px){
+    .CompleteMessage-share {
+    	width: 400px;
+        
+        
+    }
+    .CompleteMessage-share:hover{ 
+    	box-shadow: 4px 6px rgba(0,0,0,0.24);
+    }
+}
+@media screen and (min-width: 400px){
+    .CompleteMessage-img {
+	  width: 400px;
+    }
+}
+
+.CompleteMessage-about {
+	font-size: 12px;
+	position: absolute;
+    bottom: 0px;
+    width: 100%;
+    /*background: #333333;
+    color: white;*/
+
+    padding: 4px;
+}
 .CompleteMessage-link, .CompleteMessage-link:visited{
-	color: white;
-    background: #333333;
+	color: #222222;
+    /*background: #333333;*/
     text-decoration: none;
-    padding: 1px 4px;
+    
     margin: 5px;
 }
 .CompleteMessage-link:hover {
-   text-decoration: underline;	
+    text-decoration: underline;	
 }

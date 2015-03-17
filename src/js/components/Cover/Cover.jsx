@@ -40,7 +40,7 @@ var Cover = React.createClass({
     });
 
     var totalCountIndex = (this.props.totalCount) ? <div className="Cover-arrowBox"
-                          onClick={this._onGoToIntro}>開啟副本#{this.props.totalCount+1}</div> : "";
+                          onClick={this._onGoToIntro}>開啟副本 No.{this.props.totalCount+1}</div> : "";
 
     return (
       <div>
@@ -57,9 +57,11 @@ var Cover = React.createClass({
                   </div>
                   <img className="Cover-heroImage"
                        src={heroImg} />
+
                   <div className="Cover-activateButton">
                       {totalCountIndex}
                   </div>
+                  <div className="Cover-activateDate">副本開啟時間：2015/03/18 -</div>
               </div>
           </div>
           <div className="Cover-about">本測驗內容及版本對照由經濟民主連合提供，網頁由沃草製作</div>
