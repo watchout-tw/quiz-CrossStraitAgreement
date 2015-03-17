@@ -64,9 +64,7 @@ var Version = React.createClass({
 
     	//Smaller
 
-    	var textItem = (this.props.totalCount > 3) ? <div className="Version-text--smallInline">{title}</div> :
-    	<div className="Version-text--small">{title}</div> ;
-
+    	var textItem = (this.props.totalCount > 3) ? <div className="Version-text--smallInline">{title}</div> : <div className="Version-text--small">{title}</div> ;
     	result = (
         <div className="Version--small">
             <img className="Version-img--small" 
