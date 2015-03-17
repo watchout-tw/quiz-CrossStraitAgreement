@@ -1,62 +1,3 @@
-// module.exports = 
-// {
-//   "Question1" : 
-//   {
-//     "id" : "Question1",
-//     "order" : 1,
-//     "index" : "Q1",
-//     "title" : "彼此定位",
-//     "description" : "你認為在監督條例中應該如何稱呼雙方及處理彼此定位？",
-//     "options" : [
-//             {
-//               "index" : "A",
-//               "content" : "一國兩區：台灣地區與大陸地區",
-//               "versions" : ["EY", "江啟臣"]
-//             },
-//             {
-//               "index" : "B",
-//               "content" : "模糊處理：兩岸或我方與對方",
-//               "versions" : ["李應元"]
-//             },
-//             {
-//               "index" : "C",
-//               "content" : "台灣中華民國政府與大陸中華人民共和國政府",
-//               "versions" : ["尤美女"]
-//             },
-//             {
-//               "index" : "D",
-//               "content" : "台灣與中國（或台灣與中華人民共和國）",
-//               "versions" : ["DPP", "姚文智", "TSU", "鄭麗君"]
-//             }
-//     ]
-//   },
-//   "Question2" : 
-//   {
-//     "id" : "Question2",
-//     "order" : 2,
-//     "index" : "Q2",
-//     "title" : "公民參與的時機",
-//     "description" : "你認為在兩岸協議的協商簽署過程中，政府應於何時舉辦對外公開的公聽會？",
-//     "options" : [
-//             {
-//               "index" : "A",
-//               "content" : "要不要開與何時開公聽會，都由行政部門自行決定",
-//               "versions" : ["DPP", "姚文智"]
-//             },
-//             {
-//               "index" : "B",
-//               "content" : "雙方談判大致完成時，才辦理公聽會對外「說明談判結果」（在此之前，只辦理不公開的溝通說明會、座談會）",
-//               "versions" : ["EY"]
-//             },
-//             {
-//               "index" : "C",
-//               "content" : "政府打算進行談判前，就要召開公聽會，讓公民「參與政策的形成」",
-//               "versions" : ["TSU","尤美女","李應元"]
-//             }
-//     ]
-//   }
-//  };
-
 module.exports = 
 {
   "Question1" : 
@@ -85,7 +26,7 @@ module.exports =
             {
               "index" : "D",
               "content" : "台灣與中國（或台灣與中華人民共和國）",
-              "versions" : ["DPP", "姚文智", "TSU", "鄭麗君"]
+              "versions" : ["鄭麗君", "姚文智", "DPP", "TSU"]
             }
     ]
   },
@@ -100,7 +41,7 @@ module.exports =
             {
               "index" : "A",
               "content" : "要不要開與何時開公聽會，都由行政部門自行決定",
-              "versions" : ["DPP", "姚文智"]
+              "versions" : ["姚文智", "DPP"]
             },
             {
               "index" : "B",
@@ -110,7 +51,7 @@ module.exports =
             {
               "index" : "C",
               "content" : "政府打算進行談判前，就要召開公聽會，讓公民「參與政策的形成」",
-              "versions" : ["TSU","尤美女","李應元"]
+              "versions" : ["尤美女","李應元", "TSU"]
             }
     ]
   },
@@ -125,12 +66,12 @@ module.exports =
             {
               "index" : "A",
               "content" : "無須明文規定或僅籠統宣示",
-              "versions" : ["EY","DPP","TSU","姚文智"]
+              "versions" : ["姚文智", "DPP","EY","TSU"]
             },
             {
               "index" : "B",
               "content" : "將人權列入衝擊影響評估及因應機制",
-              "versions" : ["李應元","鄭麗君", "江啟臣"]
+              "versions" : ["鄭麗君", "李應元", "江啟臣"]
             },
             {
               "index" : "C",
@@ -160,7 +101,7 @@ module.exports =
             {
               "index" : "C",
               "content" : "簽署前公開：為了進行影響評估與民主監督，在協商完成後，正式簽署前，就應該公開",
-              "versions" : ["尤美女","鄭麗君","TSU","姚文智"]
+              "versions" : ["鄭麗君","姚文智","尤美女","TSU"]
             }
     ]
   },
@@ -180,12 +121,12 @@ module.exports =
             {
               "index" : "B",
               "content" : "部分監督：政府打算要進行談判前，只有重大或涉及人民權利義務事項時，才須要事前向國會「報告」，其他事項不必報告",
-              "versions" : ["DPP","姚文智","鄭麗君"]
+              "versions" : ["鄭麗君","姚文智","DPP"]
             },
             {
               "index" : "C",
               "content" : "完整監督：政府打算要進行談判前，需先提出「締結計畫」，向國會「報告」談判目標與方針；涉及主權事項時，不僅要報告，更需國會事前「同意」，才能進行",
-              "versions" : ["尤美女","TSU","李應元","江啟臣"]
+              "versions" : ["尤美女","李應元", "TSU","江啟臣"]
             }
     ]
   },
@@ -205,7 +146,7 @@ module.exports =
             {
               "index" : "B",
               "content" : "國會自己來：涉及重大事項時，國會可派員參與談判",
-              "versions" : ["DPP","TSU","姚文智","鄭麗君"]
+              "versions" : ["鄭麗君","姚文智","DPP","TSU"]
             },
             {
               "index" : "C",
@@ -230,12 +171,12 @@ module.exports =
             {
               "index" : "A",
               "content" : "不需要：等到正式簽署後，再依照國會的審議或備查程序處理",
-              "versions" : ["EY","DPP","TSU","姚文智","李應元","江啟臣"]
+              "versions" : ["姚文智","DPP","EY","李應元","TSU","江啟臣"]
             },
             {
               "index" : "B",
               "content" : "需要：若影響評估顯示協議的弊大於利，應在正式簽署前，讓國會可對草簽之協議內容，表達不同意見，促成政府重啟談判",
-              "versions" : ["尤美女","鄭麗君"]
+              "versions" : ["鄭麗君","尤美女"]
             }
     ]
   },
@@ -250,7 +191,7 @@ module.exports =
     {
               "index" : "A",
               "content" : "無須規定",
-              "versions" : ["DPP","姚文智","鄭麗君"]
+              "versions" : ["鄭麗君","姚文智","DPP"]
             },
             {
               "index" : "B",
@@ -290,7 +231,7 @@ module.exports =
             {
               "index" : "D",
               "content" : "前後皆謹慎：即使已有事前適當參與監督，事後若有必要，仍可逐條審議修正",
-              "versions" : ["DPP","TSU","姚文智","江啟臣","尤美女"]
+              "versions" : ["姚文智","DPP","尤美女","TSU","江啟臣"]
             }
     ]
   },
@@ -305,7 +246,7 @@ module.exports =
             {
               "index" : "A",
               "content" : "無須明確規定",
-              "versions" : ["DPP","TSU","姚文智"]
+              "versions" : ["姚文智","DPP","TSU"]
             },
             {
               "index" : "B",
@@ -315,7 +256,7 @@ module.exports =
             {
               "index" : "C",
               "content" : "對人權、國防、治安、財政、經濟、就業、文化、生態等全面性民主影響的評估，並提出配套的因應與補救措施",
-              "versions" : ["尤美女","李應元","鄭麗君","江啟臣"]
+              "versions" : ["鄭麗君","尤美女","李應元","江啟臣"]
             }
 
     ]
@@ -331,7 +272,7 @@ module.exports =
               {
               "index" : "A",
               "content" : "無須明確規定",
-              "versions" : ["DPP","TSU","姚文智","鄭麗君","江啟臣"]
+              "versions" : ["鄭麗君","姚文智","DPP","TSU","江啟臣"]
             },
             {
               "index" : "B",
@@ -356,12 +297,12 @@ module.exports =
             {
               "index" : "A",
               "content" : "不需要強制公投",
-              "versions" : ["EY","TSU","李應元","江啟臣"]
+              "versions" : ["EY","李應元","TSU","江啟臣"]
             },
             {
               "index" : "B",
               "content" : "涉及國防、外交、財政及經濟上利益之國家重大事項者，一定要公投",
-              "versions" : ["DPP","姚文智","鄭麗君"]
+              "versions" : ["鄭麗君","姚文智","DPP"]
             },
             {
               "index" : "C",
