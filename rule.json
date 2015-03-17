@@ -1,6 +1,23 @@
 {
     "rules": {
+        
         ".read": true,
-        ".write": "!data.exists() && newData.exists() && newData.val() > data.val()"
+        
+        "questionVotesRecord" : {
+            "$QuestionID" : {
+                "votes" : {
+                    "$VoteID" : {
+                      ".write": "data.exists() && newData.exists() && newData.val() > data.val()"
+                    }
+                }
+             }
+        
+        },
+        
+        "totalVotesCount" : {
+             ".write": "data.exists() && newData.exists() && newData.val() > data.val()"
+        }
+ 
+        
     }
 }
