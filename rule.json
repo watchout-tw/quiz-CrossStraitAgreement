@@ -7,7 +7,7 @@
             "$QuestionID" : {
                 "votes" : {
                     "$VoteID" : {
-                      ".write": "data.exists() && newData.exists() && newData.val() > data.val()"
+                      ".write": "data.exists() && newData.exists() && (newData.val() === data.val()+1) && newData.isNumber()"
                     }
                 }
              }
@@ -15,7 +15,9 @@
         },
         
         "totalVotesCount" : {
-             ".write": "data.exists() && newData.exists() && newData.val() > data.val()"
+            "votes" : {
+                ".write": "data.exists() && newData.exists() && (newData.val() === data.val()+1) && newData.isNumber()"
+            }
         }
  
         
