@@ -32,6 +32,15 @@ require('./MatchResult.css');
 
 var MatchResult = React.createClass({
   
+  _onGoToCompleteMessage(){
+    // Scroll to intro
+    var target = $(".CompleteMessage");
+    $("html,body").animate({
+        scrollTop: target.offset().top
+     }, 500);
+
+  },
+
   render () {
     var data =  this.props.data;
     var array = [];
@@ -102,7 +111,7 @@ var MatchResult = React.createClass({
     //////////////////////
 
     ////// MATCH RESULT: PIE CHART 
-    var width = ($(window).width() > 500) ? 500 : $(window).width()-20;
+    var width = ($(window).width() > 500) ? 500 : $(window).width();
     var height = ($(window).width() > 500) ? 300 : 200;
 
     /////// versionObj to Array
@@ -126,8 +135,8 @@ var MatchResult = React.createClass({
     //console.log(votesArray);
 
     var resultChartItem = (
-    <Chart className="MatchResult-chart"
-           width={width} 
+    <div className="MatchResult-chart">
+    <Chart width={width} 
            height={height}>
         <DataSeries 
            percentage={false}
@@ -138,7 +147,8 @@ var MatchResult = React.createClass({
            defaultColor="#999"
            highlightColor="#F2DB5D"
            highlightIndex={highlightIndex} />
-    </Chart>);
+    </Chart>
+    </div>);
 
    ///////////////////////////////////////////////////////////////////
 
@@ -177,6 +187,22 @@ var MatchResult = React.createClass({
           {topMatchItems}
           {resultChartItem}
           <div className="MatchResult-flexGrid"> {versionItems}</div>
+          <div className="MatchResult-summary">
+              <div className="MatchResult-summaryTitle">小結</div>
+              <p>民主不應只是選舉，也不應只是投票，民主應深化到公共政策的決定參與過程，推動《兩岸協定締結條例（民間團體版草案）》的立法，就是要讓每一個權益受影響的人民，在協議的洽簽過程中可以參與，為自己的權益與公益發聲。</p>
+              <p>立法，不只是立法委員的事，立法技術、條文可以交給專家、交給委員決定，但是，人民就重大法案的立法原則，應該表示意見。</p>
+              <p>兩岸協議監督條例「人民來立法」行動，是一個嘗試，希望找出一個結合代議民主與草根民主的可行模式，讓台灣的民主更完善，讓「民主轉大人」。</p>
+              <p>由於目前各版本草案討論的問題範圍並不相同，有些版本對於部分問題並無明確規定，所以不一定每一題的選項都會對應到各版本。填寫過程如果發現此一現象，並非疏漏，請放心參與問卷。</p>
+              <p>感謝您費心填完此份問卷，我們將以此份問卷為基礎，推動後續公共討論與國會溝通、施壓工作，讓立法委員聽到人民的聲音，讓人民的意志影響立法，建立我國對中國談判的民主監督機制。</p>
+              <div className="MatchResult-sign">
+                  <div className="MatchResult-signName">經濟民主聯合</div>
+                  <div className="MatchResult-signDate">2015.3.18</div>
+              </div>
+              <div className="MatchResult-jump">
+                  <div className="MatchResult-arrowBox"
+                       onClick={this._onGoToCompleteMessage}>咦發現野生阿草！</div>
+              </div>
+          </div>
         </div>
     );
   }
