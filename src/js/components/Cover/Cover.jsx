@@ -29,7 +29,7 @@ var Cover = React.createClass({
   render () {
   	var EDUimgURL = require("./images/EDU.jpg");
     var watchoutURL = require("./images/watchout.png");
-    var heroImg = require("./images/Cover.png");
+    var heroImg = ($(window).width() > 400) ? require("./images/Cover-large.png"):require("./images/Cover-small.png");
 
     var versionItem = versions.map((item, i)=>{
         return (
