@@ -122,8 +122,8 @@ var MatchResult = React.createClass({
         //return Math.round((item.count/votesTotal)*100, 0);
         return item.count;
     });
-    console.log("***");
-    console.log(votesArray);
+    //console.log("***");
+    //console.log(votesArray);
 
     var resultChartItem = (
     <Chart className="MatchResult-chart"

@@ -9,11 +9,12 @@
 	padding-bottom: 30px;
 	text-align: left;
 	width: 380px;
-	margin: 10px auto;
+	margin: 10px;
 }
 @media screen and (min-width: 500px){
    .MatchResult-topMatch {
-   	  width: 500px;
+   	   width: 500px;
+   	   margin: 0 auto;
    }
 }
 .MatchResult-item {

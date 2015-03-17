@@ -16,6 +16,17 @@ var QAItem = React.createClass({
     }
   },
 
+   _toNext(){
+    
+      var nextIndex = parseInt(this.props.data.order)+1;
+      var target = $("#Question"+nextIndex);
+
+      $("html,body").animate({
+          scrollTop: target.offset().top + 250
+      }, 500);
+
+  },
+
   _onAnswer (i, event) {// i: 選擇的答案 [A, B, C, D...]
     
     // Reocrd user's answer
@@ -24,6 +35,7 @@ var QAItem = React.createClass({
     // Scroll to answer section
     var ansID = "#" + this.props.data.id + "Answer";
     var target = $(ansID);
+
     $("html,body").animate({
         scrollTop: target.offset().top
     }, 500);
@@ -64,7 +76,7 @@ var QAItem = React.createClass({
                     <div className="QAItem-button"
                          onClick={this.props.toResultHandler}>看結果</div> :
                     <div className="QAItem-button"
-                         onClick={this.props.toNextHandler}>下一題</div>;
+                         onClick={this._toNext}>下一題</div>;
     }
 
     return (

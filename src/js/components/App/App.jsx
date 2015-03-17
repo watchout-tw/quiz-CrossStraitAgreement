@@ -113,7 +113,7 @@ var App = React.createClass({
           }
       });
 
-      console.log(this.state.match);
+      //console.log(this.state.match);
       return true;
   
       // TODO 紀錄總測驗人次
@@ -127,15 +127,6 @@ var App = React.createClass({
       });
 
       
-  },
-
-  _toNext(){
-
-      var target = $("#Question"+this.state.currentQAItemIndex);
-      $("html,body").animate({
-          scrollTop: target.offset().top + 250
-      }, 500);
-
   },
 
   _onShowMatchResult (){
@@ -188,7 +179,6 @@ var App = React.createClass({
                     key={index}
                     unlockHandler={this._unlockNextQAItem}
                     recordAnswerHandler={this._recordAnswer}
-                    toNextHandler={this._toNext}
                     toResultHandler={this._toResult} />
         )
     });
@@ -200,7 +190,7 @@ var App = React.createClass({
     if(this.state.showResultIndicator){
        if(!this.state.showMatchResult){
           matchResultIndicator = <div className="App-calculateResult is-active">
-              和我最接近的兩岸監督條例是...
+              <span className="App-calculateText">和我最接近的兩岸監督條例是...</span>
               <img className="App-resultImg"
                    src={gifUrl} />
           </div>;

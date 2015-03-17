@@ -1,5 +1,21 @@
+.Cover-activateDate {
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+    padding-bottom: 60px;
+}
+@media screen and (min-width: 600px){
+  .Cover-activateDate {
+      position: absolute;
+      bottom: 80px;
+      left: 0;
+      right: 0;
+      padding: 0;
+
+  }
+}
 .Cover-activateButton {
-    width: 120px;
+    width: 180px;
     margin: 0 auto;
     color: white;
     position: absolute;
