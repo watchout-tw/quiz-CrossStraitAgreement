@@ -1,0 +1,45 @@
+{
+    "totalVotesCount":{
+        "votes" : 0
+    },
+    "questionVotesRecord":
+    {
+        "Question1" : {
+        	"votes" : [0, 0, 0, 0]
+        },
+         "Question2" : {
+        	"votes" : [0, 0, 0]
+        },
+         "Question3" : {
+        	"votes" : [0, 0, 0]
+        },
+         "Question4" : {
+        	"votes" : [0, 0, 0]
+        },
+         "Question5" : {
+        	"votes" : [0, 0, 0]
+        },
+        "Question6" : {
+        	"votes" : [0, 0, 0, 0]
+        },
+         "Question7" : {
+        	"votes" : [0, 0]
+        },
+         "Question8" : {
+        	"votes" : [0, 0, 0]
+        },
+        "Question9" : {
+        	"votes" : [0, 0, 0, 0]
+        },
+        "Question10" : {
+        	"votes" : [0, 0, 0]
+        },
+        "Question11" : {
+        	"votes" : [0, 0, 0]
+        },
+        "Question12" : {
+        	"votes" : [0, 0, 0, 0]
+        }
+    }
+}
+
