@@ -5,7 +5,7 @@ var Version = require('../Version/Version.jsx');
 
 require('./Cover.css');
 
-var versions = ["尤美女", "EY", "DPP", "TSU", "鄭麗君", "姚文智", "李應元", "江啟臣"];
+var versions = ["鄭麗君", "姚文智", "DPP", "尤美女", "EY", "李應元", "TSU", "江啟臣"];
 
 var Cover = React.createClass({
 
