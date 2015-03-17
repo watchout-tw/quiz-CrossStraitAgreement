@@ -65,7 +65,7 @@ var Answer = React.createClass({
     
     var answerID = this.props.id + "Answer";///// SET answer/result part's id
 
-    console.log($(window).width());
+    //console.log($(window).width());
     var width = ($(window).width() > 400) ? 400 : $(window).width()-20;
     var height = ($(window).width() > 400) ? 300 : 200;
 

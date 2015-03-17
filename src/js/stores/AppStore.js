@@ -47,7 +47,7 @@ function _getTotalCount() {
   ref.on('value', function(snap) {
 
       _data.totalVote = snap.val().votes;
-      console.log("TOTAL TEST COUNT:"+_data.totalVote);
+      //console.log("TOTAL TEST COUNT:"+_data.totalVote);
       AppStore.emitChange();
 
   });
