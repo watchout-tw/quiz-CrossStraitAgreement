@@ -21,7 +21,7 @@ var versionObj = {
     "江啟臣": {title:"江啟臣版", count:0}
 };
 
-var PieChart = require('../PieChart/PieChart.jsx');
+
 $ = require('jquery');
 
 var Chart = require('../Chart/Chart.jsx');

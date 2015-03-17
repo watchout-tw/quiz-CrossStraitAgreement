@@ -4,7 +4,7 @@ var React = require('react/addons');
 var d3 = require("d3");
 
 var Bar = require('../Bar/Bar.jsx');
-var Pie = require('../Pie/Pie.jsx');
+
 
 var DataSeries = React.createClass({
   
@@ -33,8 +33,8 @@ var DataSeries = React.createClass({
     
     var chart = <g></g>;
 
-    if(this.props.type==="BarChart"){
-        //////// 有時候 height 會是 NaN //////// NEEDS TO BE FIXED
+    // if(this.props.type==="BarChart"){
+    //////// 有時候 height 會是 NaN //////// NEEDS TO BE FIXED
        
         var highlightIndex = this.props.highlightIndex;
         
@@ -70,44 +70,7 @@ var DataSeries = React.createClass({
         chart = bars;
         // console.log(chart);
 
-       
-
-    }else if(this.props.type==="PieChart"){
-
-        // var pie = d3.layout.pie()
-      
-        // //這裡有點拉雜
-        // var points = [];
-        
-        // this.props.data.map((item, i)=>{
-        //     points.push(item.count);
-        // });
-        // var path = pie(points);
-
-        // this.props.data.map((item, i)=>{
-        //     item.point = path[i];
-        // });
-        // ///////////
-
-        // var bars = this.props.data.map(function(point, i) {
-        //   return (
-        //     <Pie data={point} 
-        //          key={i}/>
-        //   )
-        // });
-        
- 
-        // //translate( width/2 , height / 2)
-        // var translateX = this.props.width/2;
-        // var translateY = this.props.height/2;
-        // var transformFomula = "translate("+translateX+","+translateY+")";
-        // chart = (
-        //   <g transform={transformFomula}>{bars}</g>
-        // );
-
-    }else {
-       //
-    }
+    //}
 
     return (
       <g>{chart}</g>
