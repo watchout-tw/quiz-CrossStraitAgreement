@@ -43,7 +43,7 @@ app.get('/CrossStraitAgreement', function (req, res) {
       html = html.replace(/\{\{description\}\}/, "人民來立法，千人揪副本！已經成功達到Lv. 5！");
     }
 
-    html = html.replace(/\{\{shares\}\}/, "http://quiz-test.musou.tw/shares/lv" + currentLevel + ".jpg");
+    html = html.replace(/\{\{shares\}\}/, "http://quiz-test.musou.tw/shares/level" + currentLevel + ".jpg");
 
     return res.status(200).send(html);
   });
