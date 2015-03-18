@@ -12,7 +12,7 @@ var CompleteMessage = React.createClass({
     //var picture = require("./images/1.png");
     //var picture = encodeURIComponent("http://soidid.github.io/qaDraft/build/79c377fffe29fb60366e458da5fa89b6.png");
     //window.open("https://www.facebook.com/dialog/feed?app_id=1569112793348264&display=popup&caption=&link=https%3A%2F%2Fquiz.musou.tw%2FCrossStraitAgreement&redirect_uri=https%3A%2F%2Fquiz.musou.tw%2FCrossStraitAgreement&name="+name+"&caption="+caption+"&picture="+picture);
-    var appid = "1569112793348264";
+    var appid = "1569111413348402";
     window.open("https://www.facebook.com/dialog/feed?app_id="+appid+"&display=popup&caption=&link=https%3A%2F%2Fquiz.musou.tw%2FCrossStraitAgreement&redirect_uri=https%3A%2F%2Fquiz.musou.tw%2FCrossStraitAgreement");
   },
 
