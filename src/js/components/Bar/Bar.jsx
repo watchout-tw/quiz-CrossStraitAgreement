@@ -55,18 +55,21 @@ var Bar = React.createClass({
     
 
     var label = (this.props.percentage) ? this.props.value + "%" : this.props.value;
-    var xOffset = (this.props.percentage) ? (this.props.offset + this.props.width/2 - 18) : (this.props.offset + this.props.width/2 - 6);
+    
+    //FONT X OFFSET
+    var xOffset = (this.props.value > 10) ? (this.props.offset + this.props.width/2 - 14) : 
+    ($(window).width() > 400)?
+    (this.props.offset + this.props.width/2 - 5):(this.props.offset + this.props.width/2 - 10);
+    
     var fontSize = $(window).width() > 400 ? "20px" : "16px";
     var strokeWidth = $(window).width() > 400 ? "1.2" : "1";
-    var x = $(window).width() > 400 ? (this.props.offset - 5) :
-    (this.props.point > 10 ? this.props.offset - 3 : this.props.offset - 8 );
-
+    
     return (
       <g>
           <rect fill={this.props.color}
                 width={this.props.width} 
                 height="0"
-                x={x} 
+                x={this.props.offset} 
                 y={this.props.availableHeight - 0} />
           <text x={xOffset} 
                 y={this.props.availableHeight - 10}

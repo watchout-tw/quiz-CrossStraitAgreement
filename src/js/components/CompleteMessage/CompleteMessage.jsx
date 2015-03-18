@@ -70,10 +70,11 @@ var CompleteMessage = React.createClass({
 
           
 
-          <div className="CompleteMessage-about">了解更多關於兩岸監督條例的相關訊息，請持續關注
-              <a className="CompleteMessage-link" href="http://goo.gl/2lJoEg" target="_blank">經濟民主連合</a>＆
+          <div className="CompleteMessage-about">
+              <div className="CompleteMessage-aboutText">了解更多關於兩岸監督條例的相關訊息，請持續關注</div>
+              <a className="CompleteMessage-link" href="http://goo.gl/2lJoEg" target="_blank">經濟民主連合</a>
               <a className="CompleteMessage-link" href="http://goo.gl/QknVVR" target="_blank">沃草</a>
-              粉絲頁。</div>
+          </div>
         </div>
     );
   }
