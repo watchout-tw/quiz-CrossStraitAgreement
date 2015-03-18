@@ -2,6 +2,7 @@
 
 var React = require('react/addons');
 var d3 = require("d3");
+$ = require('jquery');
 
 var Bar = React.createClass({
   getDefaultProps: function() {
@@ -53,22 +54,26 @@ var Bar = React.createClass({
   render: function() {
     
 
-    var label = (this.props.percentage) ? this.props.value + " %" : this.props.value;
+    var label = (this.props.percentage) ? this.props.value + "%" : this.props.value;
     var xOffset = (this.props.percentage) ? (this.props.offset + this.props.width/2 - 18) : (this.props.offset + this.props.width/2 - 6);
+    var fontSize = $(window).width() > 400 ? "20px" : "16px";
+    var strokeWidth = $(window).width() > 400 ? "1.2" : "1";
+    var x = $(window).width() > 400 ? (this.props.offset - 5) :
+    (this.props.point > 10 ? this.props.offset - 3 : this.props.offset - 8 );
 
     return (
       <g>
           <rect fill={this.props.color}
                 width={this.props.width} 
                 height="0"
-                x={this.props.offset} 
+                x={x} 
                 y={this.props.availableHeight - 0} />
           <text x={xOffset} 
                 y={this.props.availableHeight - 10}
-                fontSize="20px"
+                fontSize={fontSize}
                 fill="black"
                 stroke="black"
-                strokeWidth="1.4" >{label}</text>
+                strokeWidth={strokeWidth} >{label}</text>
       </g>
     );
     // return (
