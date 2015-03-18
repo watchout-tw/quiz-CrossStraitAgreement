@@ -67,9 +67,18 @@ canvas {
     }
 
 }
+
 .Answer-flexCellIndex {
 	font-size: 20px;
 	margin-bottom: 20px;
     color: #999;
-    font-weight: 900;;
+    font-weight: 900;
+    padding-right: 3px;
+}
+
+@media screen and (min-width: 600px){
+	.Answer-flexCellIndex {
+       padding-right: 6px;
+    }
+
 }
