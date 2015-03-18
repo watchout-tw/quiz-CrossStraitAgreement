@@ -9,11 +9,30 @@ var CompleteMessage = React.createClass({
   _onShare(){
     //var name = encodeURIComponent("兩岸監督條例，民意大調查");
     //var caption = encodeURIComponent("人民來立法，千人揪副本！還差 xx 人就能進化到Lv. O！");
-    //var picture = require("./images/1.png");
+    
     //var picture = encodeURIComponent("http://soidid.github.io/qaDraft/build/79c377fffe29fb60366e458da5fa89b6.png");
     //window.open("https://www.facebook.com/dialog/feed?app_id=1569112793348264&display=popup&caption=&link=https%3A%2F%2Fquiz.musou.tw%2FCrossStraitAgreement&redirect_uri=https%3A%2F%2Fquiz.musou.tw%2FCrossStraitAgreement&name="+name+"&caption="+caption+"&picture="+picture);
+    
+    var diff = 0, currentLevel = 1;
+    var votes = this.props.copyIndex;
+    if( 0 <= votes && votes < 299) {
+      diff = 300 - votes;
+    } else if ( 300 <= votes && votes < 499 ){
+      diff = 500 - votes;
+      currentLevel = 2;
+    } else if ( 500 <= votes && votes < 699 ){
+      diff = 700 - votes;
+      currentLevel = 3;
+    } else if ( 700 <= votes && votes < 887 ){
+      diff = 888 - votes;
+      currentLevel = 4;
+    } else {
+      currentLevel = 5;
+    }
+    var picture = encodeURIComponent("http://quiz.musou.tw/shares/level"+currentLevel+".jpg");
+
     var appid = "1569111413348402";
-    window.open("https://www.facebook.com/dialog/feed?app_id="+appid+"&display=popup&caption=&link=https%3A%2F%2Fquiz.musou.tw%2FCrossStraitAgreement&redirect_uri=https%3A%2F%2Fquiz.musou.tw%2FCrossStraitAgreement");
+    window.location.href = "https://www.facebook.com/dialog/feed?app_id="+appid+"&display=popup&caption=&link=http%3A%2F%2Fquiz.musou.tw%2FCrossStraitAgreement&redirect_uri=http%3A%2F%2Fquiz.musou.tw%2FCrossStraitAgreement&picture="+picture;
   },
 
   render () {
