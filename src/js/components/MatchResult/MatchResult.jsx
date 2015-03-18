@@ -196,7 +196,7 @@ var MatchResult = React.createClass({
               <p>由於目前各版本草案討論的問題範圍並不相同，有些版本對於部分問題並無明確規定，所以不一定每一題的選項都會對應到各版本。填寫過程如果發現此一現象，並非疏漏，請放心參與問卷。</p>
               <p>感謝您費心填完此份問卷，我們將以此份問卷為基礎，推動後續公共討論與國會溝通、施壓工作，讓立法委員聽到人民的聲音，讓人民的意志影響立法，建立我國對中國談判的民主監督機制。</p>
               <div className="MatchResult-sign">
-                  <div className="MatchResult-signName">經濟民主聯合</div>
+                  <div className="MatchResult-signName">經濟民主連合</div>
                   <div className="MatchResult-signDate">2015.3.18</div>
               </div>
               <div className="MatchResult-jump">

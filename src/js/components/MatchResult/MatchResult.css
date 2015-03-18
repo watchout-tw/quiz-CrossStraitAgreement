@@ -39,9 +39,8 @@
 }
 @media screen and (min-width: 520px){
 	.MatchResult-flexGrid {
-    	padding-top: 10px;
-    	width: 520px;
-    	padding: 0px 5px 0px 5px;
+    	width: 505px;
+    	padding: 0px 5px 0px 0px;
     	margin: 0 auto;
         display: flex;
         display: -webkit-flex; /* for safari */

@@ -57,9 +57,9 @@ var Bar = React.createClass({
     var label = (this.props.percentage) ? this.props.value + "%" : this.props.value;
     
     //FONT X OFFSET
-    var xOffset = (this.props.value > 10) ? (this.props.offset + this.props.width/2 - 14) : 
+    var xOffset = (this.props.value >= 10) ? (this.props.offset + this.props.width/2 - 14) : 
     ($(window).width() > 400)?
-    (this.props.offset + this.props.width/2 - 5):(this.props.offset + this.props.width/2 - 10);
+    (this.props.offset + this.props.width/2 - 16):(this.props.offset + this.props.width/2 - 10);
     
     var fontSize = $(window).width() > 400 ? "20px" : "16px";
     var strokeWidth = $(window).width() > 400 ? "1.2" : "1";
