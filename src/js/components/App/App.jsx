@@ -195,7 +195,7 @@ var App = React.createClass({
                    src={gifUrl} />
           </div>;
        }else{
-          matchResultIndicator = <div className="App-calculateResult.is-completed">
+          matchResultIndicator = <div className="App-calculateResult is-completed">
               <img className="App-resultImg"
                    src={imgUrl} />
           </div>;
