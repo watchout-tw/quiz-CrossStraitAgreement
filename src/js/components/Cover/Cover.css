@@ -211,9 +211,10 @@
 }
 .Cover-description {
 	text-align: left;
+  line-height: 1.6;
 	background: white;
-  	padding: 5px 30px;
-  	box-shadow: 60px 0px 0px #EFE9D7, -60px 0px 0px #EFE9D7, 0px -10px 0px #EFE9D7, 0px 10px 0px #EFE9D7
+  padding: 5px 30px;
+  box-shadow: 60px 0px 0px #EFE9D7, -60px 0px 0px #EFE9D7, 0px -10px 0px #EFE9D7, 0px 10px 0px #EFE9D7
 }
 
 
