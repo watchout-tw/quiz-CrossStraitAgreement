@@ -127,9 +127,9 @@ var MatchResult = React.createClass({
     });
     
     var votesArray = matchArray.map((item, i)=>{
-    	//console.log(item.count);
-        //return Math.round((item.count/votesTotal)*100, 0);
-        return item.count;
+    	  //console.log(item.count);
+        return Math.round((item.count/votesTotal)*100, 0);
+        //return item.count;
     });
     //console.log("***");
     //console.log(votesArray);
@@ -139,13 +139,14 @@ var MatchResult = React.createClass({
     <Chart width={width} 
            height={height}>
         <DataSeries 
-           percentage={false}
+           percentage={true}
            type="BarChart"
            data={votesArray} 
            width={width}
            height={height}
            defaultColor="#999"
            highlightColor="#F2DB5D"
+           diverseColor={true}
            highlightIndex={highlightIndex} />
     </Chart>
     </div>);

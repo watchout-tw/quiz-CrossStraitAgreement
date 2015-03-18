@@ -1,20 +1,20 @@
 .Answer {
 	height: 0px;
 	overflow: hidden;
-	
 	position: relative;
 
-}
-@media screen and (min-width: 400px){
-	.Answer.is-completed {
-		padding-top: 100px;
-    }
 }
 .Answer.is-completed {
 	height: auto;
 	min-height: 50vh;
 	padding-top: 150px;
 }
+@media screen and (min-width: 400px){
+	.Answer.is-completed {
+		padding-top: 100px;
+    }
+}
+
 /*
 canvas {
 	width: 100%;

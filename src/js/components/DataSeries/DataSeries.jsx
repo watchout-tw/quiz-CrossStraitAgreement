@@ -4,7 +4,20 @@ var React = require('react/addons');
 var d3 = require("d3");
 
 var Bar = require('../Bar/Bar.jsx');
-
+//var colorHue = ["#0c2c84","#225ea8","#1d91c0","#41b6c4","#7fcdbb","#c7e9b4","#edf8b1","#ffffd9"];
+var colorHue = [
+"#ECCB16",
+//"#EED12E",
+"#F0D645",
+//"#F2DB5D",
+"#F4E075",
+//"#F6E58C",
+"#F8EBA4",
+"#FAF0BB",
+"#FAF0BB",
+"#FAF0BB",
+"#FAF0BB"
+];
 
 var DataSeries = React.createClass({
   
@@ -39,22 +52,30 @@ var DataSeries = React.createClass({
         var highlightIndex = this.props.highlightIndex;
         
         // Bar Chart
+        var colorIndex = 0;
+        var previousPoint = -1;
         var bars = this.props.data.map(function(point, i) {
 
-           var color = props.defaultColor;
-           
-           //console.log("-------");
-           //console.log(highlightIndex);
-           if(highlightIndex.length){
-              highlightIndex.map(function (obj, index) {
-                  if(obj.charCodeAt(0)-65 === i) // A, B, C, D to 0, 1, 2, 3
-                      color = props.highlightColor;
-              })
+          var color;
+          if(props.diverseColor){
+              
+              if(previousPoint !== -1){
+                  colorIndex = (previousPoint === point) ? colorIndex : colorIndex + 1;
+              }
+              previousPoint = point;
+              color = colorHue[colorIndex];
 
-           }
-           
-           // console.log("POINT:"+point);
-           // console.log(yScale(point));
+          }else{
+              color = props.defaultColor;
+              if(highlightIndex.length){
+                highlightIndex.map(function (obj, index) {
+                    if(obj.charCodeAt(0)-65 === i) // A, B, C, D to 0, 1, 2, 3
+                        color = props.highlightColor;
+                })
+  
+              }
+          }
+        
 
            return (
              <Bar percentage={props.percentage}
