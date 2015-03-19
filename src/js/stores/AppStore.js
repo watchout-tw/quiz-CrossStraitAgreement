@@ -14,7 +14,7 @@ var assign = require('object-assign');
 // store 改變之後廣播出去的內容
 var CHANGE_EVENT = 'change';
 var Firebase = require('firebase');
-
+var request = require('superagent');
 
 // Store 分成三個大部分：private, public, register self
 
@@ -43,11 +43,21 @@ function _update(updates) {
 }
 function _getTotalCount() {
   
-  var ref = new Firebase('https://qa10.firebaseio.com/totalVotesCount');
-  ref.on('value', function(snap) {
+  // var ref = new Firebase('https://qa10.firebaseio.com/totalVotesCount');
+  // ref.on('value', function(snap) {
 
-      _data.totalVote = snap.val().votes;
-      //console.log("TOTAL TEST COUNT:"+_data.totalVote);
+  //     _data.totalVote = snap.val().votes;
+  //     //console.log("TOTAL TEST COUNT:"+_data.totalVote);
+  //     AppStore.emitChange();
+
+  // });
+
+  
+  request
+  .get('https://qa10.firebaseio.com/totalVotesCount/votes.json')
+  .end(function(err, res){
+      //console.log(res.text);
+      _data.totalVote = parseInt(res.text, 10);
       AppStore.emitChange();
 
   });
@@ -94,30 +104,52 @@ var AppStore = merge(EventEmitter.prototype, {
 //
 // Load vote data & total count
 
-var ref = new Firebase('https://qa10.firebaseio.com/questionVotesRecord');
-ref.on('value', function(snap) {
+// var ref = new Firebase('https://qa10.firebaseio.com/questionVotesRecord');
+// ref.on('value', function(snap) {
   
-  var votes = snap.val();
-  for(var key in _data.questions){
-      if(votes[key]){
+//   var votes = snap.val();
+//   for(var key in _data.questions){
+//       if(votes[key]){
         
-        //console.log(votes[key]);
-        //console.log(_data[key].options);
+//         //console.log(votes[key]);
+//         //console.log(_data[key].options);
 
-        //Update voting data
-        for(var i in _data.questions[key].options){
-            //console.log(_data[key].options[i].votes);
-            //console.log(votes[key].votes[i]);
-            _data.questions[key].options[i].votes = votes[key].votes[i];
-        }
+//         //Update voting data
+//         for(var i in _data.questions[key].options){
+//             //console.log(_data[key].options[i].votes);
+//             //console.log(votes[key].votes[i]);
+//             _data.questions[key].options[i].votes = votes[key].votes[i];
+//         }
   
+//       }
+//   }
+
+//   _getTotalCount();
+//   // AppStore.emitChange();
+
+// });
+
+//
+// Load vote data & total count
+
+  request
+  .get('https://qa10.firebaseio.com/questionVotesRecord.json')
+  .end(function(err, res){
+      //console.log(res.body);
+      var votes = res.body;
+      for(var key in _data.questions){
+          if(votes[key]){
+            for(var i in _data.questions[key].options){
+                _data.questions[key].options[i].votes = votes[key].votes[i];
+            }
+      
+          }
       }
-  }
+      //console.log(_data.questions);
+      
+      _getTotalCount();
 
-  _getTotalCount();
-  // AppStore.emitChange();
-
-});
+  });
 
 //========================================================================
 //
