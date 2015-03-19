@@ -54,7 +54,8 @@ var Bar = React.createClass({
   render: function() {
     
 
-    var label = (this.props.percentage) ? this.props.value + "%" : this.props.value;
+    //var label = (this.props.percentage) ? this.props.value + "%" : this.props.value;
+    var label = isNaN(this.props.value) ? "": (this.props.percentage) ? this.props.value + "%" : this.props.value;
     
     //FONT X OFFSET
     var xOffset = (this.props.value >= 10) ? 
