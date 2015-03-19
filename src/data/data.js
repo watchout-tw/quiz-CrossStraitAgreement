@@ -15,7 +15,7 @@ module.exports =
           "EY",
           "江啟臣"
         ],
-        "votes": 85
+        "votes": 87
       },
       {
         "index": "B",
@@ -23,7 +23,7 @@ module.exports =
         "versions": [
           "李應元"
         ],
-        "votes": 188
+        "votes": 217
       },
       {
         "index": "C",
@@ -31,7 +31,7 @@ module.exports =
         "versions": [
           "尤美女"
         ],
-        "votes": 532
+        "votes": 623
       },
       {
         "index": "D",
@@ -42,7 +42,7 @@ module.exports =
           "DPP",
           "TSU"
         ],
-        "votes": 1693
+        "votes": 1908
       }
     ]
   },
@@ -60,7 +60,7 @@ module.exports =
           "姚文智",
           "DPP"
         ],
-        "votes": 25
+        "votes": 30
       },
       {
         "index": "B",
@@ -68,7 +68,7 @@ module.exports =
         "versions": [
           "EY"
         ],
-        "votes": 120
+        "votes": 138
       },
       {
         "index": "C",
@@ -78,7 +78,7 @@ module.exports =
           "李應元",
           "TSU"
         ],
-        "votes": 2103
+        "votes": 2381
       }
     ]
   },
@@ -108,7 +108,7 @@ module.exports =
           "李應元",
           "江啟臣"
         ],
-        "votes": 106
+        "votes": 125
       },
       {
         "index": "C",
@@ -116,7 +116,7 @@ module.exports =
         "versions": [
           "尤美女"
         ],
-        "votes": 1997
+        "votes": 2262
       }
     ]
   },
@@ -135,7 +135,7 @@ module.exports =
           "李應元",
           "江啟臣"
         ],
-        "votes": 26
+        "votes": 28
       },
       {
         "index": "B",
@@ -143,7 +143,7 @@ module.exports =
         "versions": [
           "EY"
         ],
-        "votes": 117
+        "votes": 136
       },
       {
         "index": "C",
@@ -154,7 +154,7 @@ module.exports =
           "尤美女",
           "TSU"
         ],
-        "votes": 1912
+        "votes": 2166
       }
     ]
   },
@@ -171,7 +171,7 @@ module.exports =
         "versions": [
           "EY"
         ],
-        "votes": 27
+        "votes": 31
       },
       {
         "index": "B",
@@ -181,7 +181,7 @@ module.exports =
           "姚文智",
           "DPP"
         ],
-        "votes": 134
+        "votes": 155
       },
       {
         "index": "C",
@@ -192,7 +192,7 @@ module.exports =
           "TSU",
           "江啟臣"
         ],
-        "votes": 1790
+        "votes": 2032
       }
     ]
   },
@@ -209,7 +209,7 @@ module.exports =
         "versions": [
           "EY"
         ],
-        "votes": 35
+        "votes": 38
       },
       {
         "index": "B",
@@ -220,7 +220,7 @@ module.exports =
           "DPP",
           "TSU"
         ],
-        "votes": 127
+        "votes": 157
       },
       {
         "index": "C",
@@ -229,7 +229,7 @@ module.exports =
           "李應元",
           "江啟臣"
         ],
-        "votes": 199
+        "votes": 226
       },
       {
         "index": "D",
@@ -237,7 +237,7 @@ module.exports =
         "versions": [
           "尤美女"
         ],
-        "votes": 1474
+        "votes": 1679
       }
     ]
   },
@@ -259,7 +259,7 @@ module.exports =
           "TSU",
           "江啟臣"
         ],
-        "votes": 54
+        "votes": 59
       },
       {
         "index": "B",
@@ -268,7 +268,7 @@ module.exports =
           "鄭麗君",
           "尤美女"
         ],
-        "votes": 1677
+        "votes": 1921
       }
     ]
   },
@@ -287,7 +287,7 @@ module.exports =
           "姚文智",
           "DPP"
         ],
-        "votes": 25
+        "votes": 27
       },
       {
         "index": "B",
@@ -295,7 +295,7 @@ module.exports =
         "versions": [
           "EY"
         ],
-        "votes": 116
+        "votes": 136
       },
       {
         "index": "C",
@@ -303,7 +303,7 @@ module.exports =
         "versions": [
           "尤美女"
         ],
-        "votes": 1485
+        "votes": 1709
       }
     ]
   },
@@ -320,19 +320,19 @@ module.exports =
         "versions": [
           "EY"
         ],
-        "votes": 21
+        "votes": 22
       },
       {
         "index": "B",
         "content": "前寬後謹慎：國會事前無須太多參與監督，但事後應逐條審議表決",
         "versions": [],
-        "votes": 98
+        "votes": 129
       },
       {
         "index": "C",
         "content": "前謹慎後寬：國會事前可適當參與監督，事後僅能包裹表決，不能逐條審議修正",
         "versions": [],
-        "votes": 89
+        "votes": 107
       },
       {
         "index": "D",
@@ -344,7 +344,7 @@ module.exports =
           "TSU",
           "江啟臣"
         ],
-        "votes": 1335
+        "votes": 1523
       }
     ]
   },
@@ -371,7 +371,7 @@ module.exports =
         "versions": [
           "EY"
         ],
-        "votes": 48
+        "votes": 59
       },
       {
         "index": "C",
@@ -382,7 +382,7 @@ module.exports =
           "李應元",
           "江啟臣"
         ],
-        "votes": 1422
+        "votes": 1638
       }
     ]
   },
@@ -403,7 +403,7 @@ module.exports =
           "TSU",
           "江啟臣"
         ],
-        "votes": 23
+        "votes": 28
       },
       {
         "index": "B",
@@ -411,7 +411,7 @@ module.exports =
         "versions": [
           "EY"
         ],
-        "votes": 16
+        "votes": 20
       },
       {
         "index": "C",
@@ -419,7 +419,7 @@ module.exports =
         "versions": [
           "尤美女"
         ],
-        "votes": 1399
+        "votes": 1606
       }
     ]
   },
@@ -439,7 +439,7 @@ module.exports =
           "TSU",
           "江啟臣"
         ],
-        "votes": 59
+        "votes": 72
       },
       {
         "index": "B",
@@ -449,7 +449,7 @@ module.exports =
           "姚文智",
           "DPP"
         ],
-        "votes": 99
+        "votes": 111
       },
       {
         "index": "C",
@@ -457,13 +457,13 @@ module.exports =
         "versions": [
           "尤美女"
         ],
-        "votes": 231
+        "votes": 286
       },
       {
         "index": "D",
         "content": "以上二者，都一定要先交付公投",
         "versions": [],
-        "votes": 1023
+        "votes": 1161
       }
     ]
   }
