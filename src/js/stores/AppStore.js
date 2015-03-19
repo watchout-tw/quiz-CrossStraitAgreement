@@ -44,7 +44,7 @@ function _update(updates) {
 function _getTotalCount() {
   
   var ref = new Firebase('https://qa10.firebaseio.com/totalVotesCount');
-  ref.on('value', function(snap) {
+  ref.once('value', function(snap) {
 
       _data.totalVote = snap.val().votes;
       //console.log("TOTAL TEST COUNT:"+_data.totalVote);
@@ -95,7 +95,7 @@ var AppStore = merge(EventEmitter.prototype, {
 // Load vote data & total count
 
 var ref = new Firebase('https://qa10.firebaseio.com/questionVotesRecord');
-ref.on('value', function(snap) {
+ref.once('value', function(snap) {
   
   var votes = snap.val();
   for(var key in _data.questions){
