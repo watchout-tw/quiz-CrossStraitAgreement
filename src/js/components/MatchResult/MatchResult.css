@@ -54,6 +54,18 @@
 }
 .MatchResult-chart {
 	margin: 0 auto;
+    position: relative;
+}
+
+.MatchResult-chartLabel {
+    position: absolute;
+    top: -30px;
+    left: 0;
+}
+@media screen and (min-width: 400px){
+    .MatchResult-chartLabel {
+        top: -25px;
+    }
 }
 .MatchResult-summaryTitle {
 	font-size: 20px;

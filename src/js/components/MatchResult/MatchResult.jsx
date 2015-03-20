@@ -136,6 +136,7 @@ var MatchResult = React.createClass({
 
     var resultChartItem = (
     <div className="MatchResult-chart">
+    <div className="MatchResult-chartLabel">（單位：題）</div>
     <Chart width={width} 
            height={height}>
         <DataSeries 

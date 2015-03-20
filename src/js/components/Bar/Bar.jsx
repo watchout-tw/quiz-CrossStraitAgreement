@@ -64,6 +64,10 @@ var Bar = React.createClass({
     ($(window).width() > 400)?
     (this.props.offset + this.props.width/2 - 16) : (this.props.offset + this.props.width/2 - 10);
     
+    xOffset = (this.props.percentage) ?
+    xOffset :
+    (($(window).width() > 400) ? xOffset+7 : xOffset+5);
+
     var fontSize = $(window).width() > 400 ? "20px" : "14px";
     var strokeWidth = $(window).width() > 400 ? "1.2" : "0.8";
     
