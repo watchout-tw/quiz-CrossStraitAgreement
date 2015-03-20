@@ -1,5 +1,5 @@
 
-module.exports = 
+module.exports =
 {
   "Question1": {
     "id": "Question1",
@@ -246,7 +246,7 @@ module.exports =
     "order": 7,
     "index": "Q7-1",
     "title": "國會的事後監督 (談判完成後，正式簽署前)：國會不同意見的表達",
-    "description": "你認為在政府談判完成後協議正式簽署前，需不需要讓國會有表達不同意見的機會？",
+    "description": "你認為在政府談判完成後協議正式簽署前，政府需不需要向國會報告協議草約的完整內容，讓國會有表達不同意見的機會？",
     "options": [
       {
         "index": "A",
@@ -342,7 +342,8 @@ module.exports =
           "DPP",
           "尤美女",
           "TSU",
-          "江啟臣"
+          "江啟臣",
+          "鄭麗君"
         ],
         "votes": 1523
       }
@@ -401,7 +402,8 @@ module.exports =
           "姚文智",
           "DPP",
           "TSU",
-          "江啟臣"
+          "江啟臣",
+          "李應元"
         ],
         "votes": 28
       },
