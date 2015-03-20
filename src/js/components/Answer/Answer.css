@@ -13,7 +13,12 @@
 	.Answer.is-completed {
 		padding-top: 100px;
     }
+    /* THIS IS BAD */
+    #Question9Answer.is-completed {
+        padding-top: 190px;
+    }
 }
+
 
 /*
 canvas {
