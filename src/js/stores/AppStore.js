@@ -35,26 +35,16 @@ function _update(updates) {
   
   // A, B, C, D to 0, 1, 2, 3
   var index = updates.index.charCodeAt(0)-65;//65:'A'
-  var ref = new Firebase('https://qa10.firebaseio.com/questionVotesRecord/'+updates.id+'/votes/'+index);
+  var ref = new Firebase('https://quiz-crossstrait.firebaseio.com/questionVotesRecord/'+updates.id+'/votes/'+index);
   ref.transaction(function (current_value) {
     return (current_value || 0) + 1;
   });
 
 }
 function _getTotalCount() {
-  
-  // var ref = new Firebase('https://qa10.firebaseio.com/totalVotesCount');
-  // ref.on('value', function(snap) {
-
-  //     _data.totalVote = snap.val().votes;
-  //     //console.log("TOTAL TEST COUNT:"+_data.totalVote);
-  //     AppStore.emitChange();
-
-  // });
-
-  
+ 
   request
-  .get('https://qa10.firebaseio.com/totalVotesCount/votes.json')
+  .get('https://quiz-crossstrait.firebaseio.com/totalVotesCount/votes.json')
   .end(function(err, res){
       //console.log(res.text);
       _data.totalVote = parseInt(res.text, 10);
@@ -65,7 +55,7 @@ function _getTotalCount() {
 }
 function _updateTotalCount() {//+1
   
-  var ref = new Firebase('https://qa10.firebaseio.com/totalVotesCount/votes');
+  var ref = new Firebase('https://quiz-crossstrait.firebaseio.com/totalVotesCount/votes');
   ref.transaction(function (current_value) {
     return (current_value || 0) + 1;
   });
@@ -104,36 +94,8 @@ var AppStore = merge(EventEmitter.prototype, {
 //
 // Load vote data & total count
 
-// var ref = new Firebase('https://qa10.firebaseio.com/questionVotesRecord');
-// ref.on('value', function(snap) {
-  
-//   var votes = snap.val();
-//   for(var key in _data.questions){
-//       if(votes[key]){
-        
-//         //console.log(votes[key]);
-//         //console.log(_data[key].options);
-
-//         //Update voting data
-//         for(var i in _data.questions[key].options){
-//             //console.log(_data[key].options[i].votes);
-//             //console.log(votes[key].votes[i]);
-//             _data.questions[key].options[i].votes = votes[key].votes[i];
-//         }
-  
-//       }
-//   }
-
-//   _getTotalCount();
-//   // AppStore.emitChange();
-
-// });
-
-//
-// Load vote data & total count
-
   request
-  .get('https://qa10.firebaseio.com/questionVotesRecord.json')
+  .get('https://quiz-crossstrait.firebaseio.com/questionVotesRecord.json')
   .end(function(err, res){
       //console.log(res.body);
       var votes = res.body;
