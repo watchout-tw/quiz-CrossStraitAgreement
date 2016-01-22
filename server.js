@@ -18,7 +18,7 @@ app.get('/CrossStraitAgreement', function (req, res) {
 
 
 
-  return request.get('https://qa10.firebaseio.com/totalVotesCount.json', function(err, response, body){
+  return request.get('https://quiz-crossstrait.firebaseio.com/totalVotesCount.json', function(err, response, body){
     var votes = Number(JSON.parse(body).votes);
     if(!req.query.lv) return res.redirect('/CrossStraitAgreement?lv=' + currentLevel + '&votes=' + votes);
 
